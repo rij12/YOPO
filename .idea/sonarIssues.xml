@@ -23,6 +23,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/sonar-project.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
       </map>
     </option>
   </component>

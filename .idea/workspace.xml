@@ -8,7 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9aa2a4d5-6272-4f30-973a-893f06fb2a77" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/sonar-project.properties" afterPath="$PROJECT_DIR$/sonar-project.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -110,11 +111,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="153">
+              <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sonar-project.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sonar-project.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="55" lean-forward="true" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -210,7 +221,6 @@
         <option value="$PROJECT_DIR$/YOPO_preprocessing/data/darkflow/labels/042934274.xml" />
         <option value="$PROJECT_DIR$/YOPO_preprocessing/data/darkflow/labels/042391259.xml" />
         <option value="$PROJECT_DIR$/YOPO_preprocessing/src/main/mpii_human_pose_v1_u12_1.json" />
-        <option value="$PROJECT_DIR$/sonar-project.properties" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/run_sonar.sh" />
@@ -227,6 +237,7 @@
         <option value="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/draw_grid_cells.py" />
         <option value="$PROJECT_DIR$/runSonarQubeAnalysis.sh" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/sonar-project.properties" />
       </list>
     </option>
   </component>
@@ -827,13 +838,6 @@ y_axis_len = len(set(y_axis))</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sonar-project.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/darkflow/net/yopo/tests/test_calculate_IOU.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
@@ -997,8 +1001,16 @@ y_axis_len = len(set(y_axis))</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sonar-project.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="55" lean-forward="true" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
           <folding />
         </state>
       </provider>
