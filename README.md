@@ -1,6 +1,12 @@
+## Note
+
+This Project is based on a open source version called Darkflow which can be found here: https://www.youtube.com/watch?v=9rfXgT4oE2A
+
 ## Intro
 
-[![Build Status](https://travis-ci.com/rij12/YOPO.svg?token=an4QsGxZQ9sn7osFx53B&branch=develop)
+![Build Status](https://travis-ci.com/rij12/YOPO.svg?token=an4QsGxZQ9sn7osFx53B&branch=develop)
+
+
 
 Real-time object detection and classification. Paper: [version 1](https://arxiv.org/pdf/1506.02640.pdf), [version 2](https://arxiv.org/pdf/1612.08242.pdf).
 
