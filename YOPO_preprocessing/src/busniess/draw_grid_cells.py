@@ -8,8 +8,6 @@ This file is used to test the grid system on a given image.
 
 """
 
-# img = None
-
 img = cv2.imread(IMAGE)
 
 img_height, img_width = img.shape[:2]
