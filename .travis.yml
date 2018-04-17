@@ -7,9 +7,9 @@ python:
 
 addons:
   sonarcloud:
-    organization: "rij12-github"
+    organization: "yopo"
     token:
-      secure: "b7bd23cbad5d2a534003dbdbdecf517265a5e739"
+      secure: TOKEN
 
 jdk:
   - oraclejdk8
