@@ -1,6 +1,6 @@
 ## Note
 
-This Project is based on a open source version called Darkflow which can be found here: https://www.youtube.com/watch?v=9rfXgT4oE2A
+This Project is based on a open source version called Darkflow which can be found here: https://github.com/thtrieu/darkflow
 
 ## Intro
 
