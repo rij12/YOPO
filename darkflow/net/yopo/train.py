@@ -35,7 +35,9 @@ def loss(self, net_out):
     print('\tclasses = {}'.format(m['classes']))
     print('\tscales  = {}'.format([sprob, sconf, snoob, scoor]))
 
+    # Any 49, 8 So for each cell that class is it?
     size1 = [None, SS, C]
+    # BBox confidence Scoring Tensor
     size2 = [None, SS, B]
 
     _probs = tf.placeholder(tf.float32, size1)
@@ -43,16 +45,25 @@ def loss(self, net_out):
     _coord = tf.placeholder(tf.float32, size2 + [5])
     # weights term for L2 loss
     _proid = tf.placeholder(tf.float32, size1)
+    # material calculating IOU
+    # _areas = tf.placeholder(tf.float32, size2)
+    # _upleft = tf.placeholder(tf.float32, size2 + [2])
+    # _botright = tf.placeholder(tf.float32, size2 + [2])
     _image = tf.placeholder(tf.float32, [None, 2])
 
     # iou = tf.placeholder(tf.float32, size2)
     iou = tf.placeholder(tf.float32, size2)
+
+    # return the below placeholders
+    # print("Shape of Top left: {}, Bot Right {}".format(_upleft, _botright))
 
     self.placeholders = {
         'probs': _probs, 'confs': _confs, 'coord': _coord, 'proid': _proid,
         'image': _image, 'iou': iou
     }
 
+    # print(self.placeholders[0][0][0])
+    # tf.Tensor.eval(self,)
     # Extract the coordinate prediction from net.out
     coords = net_out[:, SS * (C + B):]
     # Make coords array back into a tensor.
@@ -60,6 +71,43 @@ def loss(self, net_out):
 
     iou = tf.py_func(calculate_iou, [_image, _coord, coords, iou], tf.float32)
     iou = tf.reshape(iou, [-1, SS, B])
+
+    # coords_print = tf.py_func(yopo_print, [coords], tf.float32)
+    # coords_print.set_shape(coords.get_shape())
+
+    #
+    wh = tf.pow(coords[:, :, :, 2:4], 2) * S  # unit: grid cell
+    area_pred = wh[:, :, :, 0] * wh[:, :, :, 1]  # unit: grid cell^2
+    centers = coords[:, :, :, 0:2]  # [batch, SS, B, 2]
+
+    # Print a box - Might need un-normalised it.
+    # new_wh = tf.py_func(print_box, [centers, wh], tf.float32)
+    # new_wh.set_shape(wh.get_shape())
+
+    floor = centers - (wh * .5)  # [batch, SS, B, 2]
+    ceil = centers + (wh * .5)  # [batch, SS, B, 2]
+
+    # output = tf.Print(_areas, [_areas], "_area tensor")
+    # _area_output = tf.py_func(yopo_print, [area_pred], tf.float32)
+    # _area_output.set_shape(area_pred.get_shape())
+    # print("OUTPUT:", output)
+
+    # calculate the intersection areas
+    # intersect_upleft = tf.maximum(floor, _upleft)
+    # intersect_botright = tf.minimum(ceil, _botright)
+    # intersect_wh = intersect_botright - intersect_upleft
+    # intersect_wh = tf.maximum(intersect_wh, 0.0)
+    # intersect = tf.multiply(intersect_wh[:, :, :, 0], intersect_wh[:, :, :, 1])
+    # intersect_new = tf.py_func(printTensor, [intersect], tf.float32)
+    # intersect_new.set_shape(intersect.get_shape())
+
+    # calculate the best IOU, set 0.0 confidence for worse boxes
+    # iou = tf.truediv(intersect_new, _areas + area_pred - intersect_new, "IOU")
+
+    # print('IOU shape: ', iou)
+
+    # new_iou = tf.py_func(testFunc, [true, net_out], tf.float32)
+    # new_iou.set_shape(iou.get_shape())
 
     best_box = tf.equal(iou, tf.reduce_max(iou, [2], True))
     best_box = tf.to_float(best_box)
@@ -79,9 +127,16 @@ def loss(self, net_out):
     conid = slim.flatten(conid)
     coord = slim.flatten(_coord)
     cooid = slim.flatten(cooid)
+    #
+    # coord_list = tf.py_func(printTensor, [coord, coords], tf.float32)
+    # coord_list.set_shape(coord.get_shape())
+    # coord_list[1].set_shape(coords.get_shape())
 
     self.fetch += [probs, confs, conid, cooid, proid]
     true = tf.concat([probs, confs, coord], 1)
+
+    # new_iou = tf.py_func(testFunc, [true, net_out], tf.float32)
+    # new_iou.set_shape(iou.get_shape())
 
     wght = tf.concat([proid, conid, cooid], 1)
     print('Building {} loss'.format(m['model']))
