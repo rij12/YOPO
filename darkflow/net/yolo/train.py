@@ -1,14 +1,10 @@
-import tensorflow.contrib.slim as slim
-import pickle
+import math
+from copy import deepcopy
+
 import tensorflow as tf
+import tensorflow.contrib.slim as slim
 
 from darkflow.net.yopo.calulating_IOU import intersection_over_union, Rectangle
-from .misc import show
-import numpy as np
-import os
-import pprint as pp
-from copy import deepcopy
-import math
 
 
 def loss(self, net_out):
@@ -93,13 +89,6 @@ def loss(self, net_out):
     tf.summary.scalar('{} loss'.format(m['model']), self.loss)
 
 
-def printTensor(tensor):
-    for x in tensor:
-        print("Best Box ", x)
-        print("length: ", len(x))
-    return tensor
-
-
 # This function is a custom graph operation writen in python.
 def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
     print("Start calculate_iou")
@@ -130,22 +119,11 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
 
             for ground_truth_box, net_out_box in zip(ground_truth_cell, net_out_cell):
 
-                # # print("*********************** ")
-                # print("Ground Truth")
-                # print(ground_truth_box)
-                # print("net out box")
-                # print(net_out_box)
-
-                # Ground Truth Tensor
-                # TODO FIX GRID CELLS!!!
                 cell_x = cell_index % S
                 cell_y = math.floor(cell_index / S)
 
                 cell_width = (image_width / S)
                 cell_height = (image_height / S)
-
-                # print("Cell width: ", cell_width, " Cell height: ", cell_height)
-                # print("Cell offset x: ", ground_truth_cell[0][0], " Cell offset y: ", ground_truth_cell[0][1])
 
                 centre_x = (cell_width * cell_x) + (ground_truth_box[0] * cell_width)
                 centre_y = (cell_height * cell_y) + (ground_truth_box[1] * cell_height)
@@ -153,23 +131,10 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
                 gt_width = (ground_truth_box[2] ** 2) * image_width
                 gt_height = (ground_truth_box[3] ** 2) * image_height
 
-                print("Angled Ground Truth", ground_truth_box[4])
                 gt_angle = ground_truth_box[4] * 360
-
-
-                # print("NEW At ", cell_index, " CX: ", cell_x, " CY: ", cell_y, " X: ", centre_x, " Y: ", centre_y,
-                #       " W: ", gt_width, " H: ", gt_height)
-                # print("Cell Number", cell_index, " CX: ", cell_x, " CY: ", cell_y)
 
                 # Create ground truth Tensor
                 ground_truth_rec = Rectangle(centre_x, centre_y, gt_width, gt_height, gt_angle)
-                # print("Ground Truth Rectangle", ground_truth_rec, "\n")
-
-                # Network out tensor
-
-                # print("Output Network Tensor")
-
-                # print("Cell offset x: ", net_out_box[0], " Cell offset y: ", net_out_box[1])
 
                 out_net_centre_x = (cell_width * cell_x) + (net_out_box[0] * cell_width)
                 out_net_centre_y = (cell_height * cell_y) + (net_out_box[1] * cell_height)
@@ -177,15 +142,11 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
                 out_net_width = (net_out_box[2] ** 2) * image_width
                 out_net_height = (net_out_box[3] ** 2) * image_height
 
-
                 net_out_angle = net_out_box[4]
                 net_out_angle = net_out_angle * 360
                 print("RAW: Angle Network output", net_out_box[4])
 
                 print("GROUND TRUTH ANGLE", gt_angle, "IOU Calculation Network", net_out_angle)
-                #
-                # print("Output At ", cell_index, " CX: ", cell_x, " CY: ", cell_y, " X: ", out_net_centre_x, " Y: ",
-                #       out_net_centre_y, " W: ", out_net_width, " H: ", out_net_height, 'angle')
 
                 # Create ground truth Tensor
                 out_net_rec = Rectangle(out_net_centre_x, out_net_centre_y, out_net_width, out_net_height,
@@ -199,8 +160,6 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
                 # if cell_index == 51:
                 print("IOU for box {}: {} \n\n".format(cell_box_index, iou_val))
 
-
-                # print("IOU for box ", cell_box_index, ": ", iou_val)
                 iou[image_index][cell_index][cell_box_index] = iou_val
 
                 cell_box_index = cell_box_index + 1

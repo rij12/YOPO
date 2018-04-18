@@ -3,19 +3,12 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/darkflow/net/yolo/data.py" line="32" />
     <bookmark url="file://$PROJECT_DIR$/darkflow/utils/loader.py" />
-    <bookmark url="file://$PROJECT_DIR$/darkflow/net/yolo/train.py" line="211" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/darkflow/net/yolo/train.py" line="170" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9aa2a4d5-6272-4f30-973a-893f06fb2a77" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/darkflow/net/yopo/data.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/darkflow/net/yopo/misc.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/darkflow/net/yopo/predict.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/darkflow/net/yopo/train.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f550e8c117feef361aab892cfc2b724adc8ed3bc" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f550e8c117feef361aab892cfc2b724adc8ed3bc" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/darkflow/net/yolo/train.py" afterPath="$PROJECT_DIR$/darkflow/net/yolo/train.py" />
-      <change beforePath="$PROJECT_DIR$/darkflow/net/yopo/__init__.py" afterPath="$PROJECT_DIR$/darkflow/net/yopo/__init__.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -129,9 +122,11 @@
       <file leaf-file-name="train.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/darkflow/net/yolo/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="519">
+              <caret line="143" column="0" lean-forward="true" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -571,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523920996051</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Removed Commented out code and added YOPO files">
+      <created>1524091451889</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524091451889</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -653,7 +655,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Sonar Plugin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Sonar Plugin" />
+    <MESSAGE value="Removed Commented out code and added YOPO files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Commented out code and added YOPO files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -910,7 +913,6 @@ y_axis_len = len(set(y_axis))</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,7 +922,6 @@ y_axis_len = len(set(y_axis))</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,7 +948,6 @@ y_axis_len = len(set(y_axis))</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,9 +1035,11 @@ y_axis_len = len(set(y_axis))</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/darkflow/net/yolo/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="519">
+          <caret line="143" column="0" lean-forward="true" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
