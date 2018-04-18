@@ -82,6 +82,7 @@ def loss(self, net_out):
     wght = tf.concat([proid, conid, cooid], 1)
     print('Building {} loss'.format(m['model']))
 
+    # Squared mean
     loss = tf.pow(net_out - true, 2)
     loss = tf.multiply(loss, wght)
     loss = tf.reduce_sum(loss, 1)
@@ -89,8 +90,19 @@ def loss(self, net_out):
     tf.summary.scalar('{} loss'.format(m['model']), self.loss)
 
 
-# This function is a custom graph operation writen in python.
 def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
+    """
+    This function is a custom opertation written in python that is to be executed in the TensorFlow graph,
+    the YOPO IOU function that replaces the old function in the YOLO version one algorithm.
+    Unlike the previous version it can handle angles and calculate a an IOU score when two boxes are rotated.
+
+    :param image_tens: A Tensor that describes the image width and height, used to reverse the normalisation.
+    :param gt_tensor: The Ground Truth Tensor, Contains the Ground Truth i.e where the boxes in the image.
+    :param net_out_tensor: The output from the network i.e where the networks thinks the bbox's are in the image for
+     each class.
+    :param iou: A tensor SS by B in size.
+    :return: iou tensor containing the iou scores for B bounding box for SS cells.
+    """
     print("Start calculate_iou")
     image_index = 0
     for ground_truth, net_out_tensor in zip(gt_tensor, net_out_tensor):
