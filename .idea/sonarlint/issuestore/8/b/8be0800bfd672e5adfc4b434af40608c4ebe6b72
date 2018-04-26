@@ -1,0 +1,8 @@
+
+npython:S101"RRename class "avgpool_layer" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(ú®¸Î8£²İ€¯,
+kpython:S101"ORename class "crop_layer" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(ëá™8£²İ€¯,
+npython:S101"RRename class "maxpool_layer" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(ò”©¸8£²İ€¯,
+spython:S101"RRename class "softmax_layer" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(üÂÁ›ûÿÿÿÿ8£²İ€¯,
+npython:S101"RRename class "dropout_layer" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(Š¸‰Ò8£²İ€¯,
+qpython:S101"PRename class "route_layer" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(É¼úúıÿÿÿÿ8£²İ€¯,
+qpython:S101"PRename class "reorg_layer" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(Ó°øÿÿÿÿ8£²İ€¯,

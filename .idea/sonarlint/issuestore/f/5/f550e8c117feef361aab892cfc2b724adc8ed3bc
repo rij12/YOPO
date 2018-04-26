@@ -1,11 +1,10 @@
 
-ppython:S117"[Rename this local variable "boxResults" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÈÄî¨
-9python:S125"Remove this commented out code.(Æ’¨·úÿÿÿÿ
-Bpython:S1481"'Remove the unused local variable "top".(¦ÉËÑøÿÿÿÿ
-Dpython:S1481")Remove the unused local variable "thick".(Øğ±±úÿÿÿÿ
-npython:S117"YRename this local variable "textJSON" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ô†¡¨
-=python:S1481"(Remove the unused local variable "left".(×‚ğ
-tpython:S117"_Rename this local variable "resultsForJSON" to match the regular expression ^[_a-z][a-z0-9_]*$.(µµõÂ
-spython:S117"YRename this local variable "textFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(É¶¬¦şÿÿÿÿ
-?python:S1481")Remove the unused local variable "right".(Â‡ 
-Bpython:S1481"'Remove the unused local variable "bot".(…ûÁ–ùÿÿÿÿ
+zpython:S117"YRename this local variable "textFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(É¶¬¦şÿÿÿÿ8ğ¦–„¯,
+upython:S117"YRename this local variable "textJSON" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ô†¡¨8ğ¦–„¯,
+wpython:S117"[Rename this local variable "boxResults" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÈÄî¨8ğ¦–„¯,
+{python:S117"_Rename this local variable "resultsForJSON" to match the regular expression ^[_a-z][a-z0-9_]*$.(µµõÂ8ğ¦–„¯,
+Fpython:S1481")Remove the unused local variable "right".(Â‡ 8ğ¦–„¯,
+Ipython:S1481"'Remove the unused local variable "top".(¦ÉËÑøÿÿÿÿ8ğ¦–„¯,
+Dpython:S1481"(Remove the unused local variable "left".(×‚ğ8ğ¦–„¯,
+Ipython:S1481"'Remove the unused local variable "bot".(…ûÁ–ùÿÿÿÿ8ğ¦–„¯,
+@python:S125"Remove this commented out code.(Æ’¨·úÿÿÿÿ8ğ¦–„¯,

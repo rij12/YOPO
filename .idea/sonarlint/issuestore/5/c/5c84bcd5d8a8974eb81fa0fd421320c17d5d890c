@@ -1,0 +1,11 @@
+
+9python:S125"Remove this commented out code.(Æ’¨·úÿÿÿÿ
+Bpython:S1481"'Remove the unused local variable "top".(¦ÉËÑøÿÿÿÿ
+Bpython:S1481"'Remove the unused local variable "bot".(…ûÁ–ùÿÿÿÿ
+=python:S1481"(Remove the unused local variable "left".(×‚ğ
+?python:S1481")Remove the unused local variable "right".(Â‡ 
+Dpython:S1481")Remove the unused local variable "thick".(Øğ±±úÿÿÿÿ
+tpython:S117"_Rename this local variable "resultsForJSON" to match the regular expression ^[_a-z][a-z0-9_]*$.(µµõÂ
+ppython:S117"[Rename this local variable "boxResults" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÈÄî¨
+npython:S117"YRename this local variable "textJSON" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ô†¡¨
+spython:S117"YRename this local variable "textFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(É¶¬¦şÿÿÿÿ

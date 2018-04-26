@@ -1,15 +1,2 @@
 
-9python:S125"Remove this commented out code.( ìò¬ıÿÿÿÿ
-4python:S125"Remove this commented out code.(‘÷·İ
-4python:S125"Remove this commented out code.(Ùşş¸
-9python:S125"Remove this commented out code.(ÍËöìüÿÿÿÿ
-4python:S125"Remove this commented out code.(ÆÔœ¦
-9python:S125"Remove this commented out code.(ÍËöìüÿÿÿÿ
-9python:S125"Remove this commented out code.(æÖĞëûÿÿÿÿ
-9python:S125"Remove this commented out code.(Ó‚¸áúÿÿÿÿ
-4python:S125"Remove this commented out code.(±¦½—
-opython:S3776"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(şùäËúÿÿÿÿ
-Hpython:S1481"-Remove the unused local variable "area_pred".(°Úïåûÿÿÿÿ
->python:S1481"(Remove the unused local variable "ceil".(’¦úÅ
-?python:S1481")Remove the unused local variable "floor".(ó—‘Ë
-jpython:S1542"TRename function "printTensor" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ÕÇÌ
+vpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(şùäËúÿÿÿÿ8”û‡­¯,

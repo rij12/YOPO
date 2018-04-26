@@ -1,14 +1,14 @@
 
-Dpython:S1481")Remove the unused local variable "limit".(¶×½ÿÿÿÿÿ
-@python:S1481"*Remove the unused local variable "height".(ËËÑ
-rpython:S107"XFunction "draw_rec_limb_boxes" has 8 parameters, which is greater than the 7 authorized.(ÑÄÊşÿÿÿÿ
-Dpython:S1481")Remove the unused local variable "width".(Ÿƒ¥Æûÿÿÿÿ
-Gpython:S1481",Remove the unused local variable "OUT_PATH".(û¾ó¸úÿÿÿÿ
-opython:S1542"YRename function "create_XML_entry" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ëåÚ˜
-Ipython:S1481".Remove the unused local variable "mid_left_y".(£¤ê‰ÿÿÿÿÿ
-Epython:S1481"/Remove the unused local variable "mid_right_y".(âÕßñ
-npython:S117"TRename this parameter "OUT_PATH" to match the regular expression ^[_a-z][a-z0-9_]*$.( ¸£úşÿÿÿÿ
-jpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 40 to the 15 allowed.(±ü«Ş
-Dpython:S1481")Remove the unused local variable "limit".(üÙÏĞüÿÿÿÿ
-rpython:S107"XFunction "create_joint_entry" has 10 parameters, which is greater than the 7 authorized.( ¸£úşÿÿÿÿ
-Gpython:S1481",Remove the unused local variable "OUT_PATH".(½¼ŠÉüÿÿÿÿ
+upython:S117"TRename this parameter "OUT_PATH" to match the regular expression ^[_a-z][a-z0-9_]*$.( ¸£úşÿÿÿÿ8œÀ­Å®,
+Npython:S1481",Remove the unused local variable "OUT_PATH".(û¾ó¸úÿÿÿÿ8œÀ­Å®,
+Npython:S1481",Remove the unused local variable "OUT_PATH".(½¼ŠÉüÿÿÿÿ8œÀ­Å®,
+vpython:S1542"YRename function "create_XML_entry" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ëåÚ˜8œÀ­Å®,
+Kpython:S1481")Remove the unused local variable "limit".(üÙÏĞüÿÿÿÿ8œÀ­Å®,
+Kpython:S1481")Remove the unused local variable "limit".(¶×½ÿÿÿÿÿ8œÀ­Å®,
+ypython:S107"XFunction "create_joint_entry" has 10 parameters, which is greater than the 7 authorized.( ¸£úşÿÿÿÿ8œÀ­Å®,
+qpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 40 to the 15 allowed.(±ü«Ş8œÀ­Å®,
+Gpython:S1481"*Remove the unused local variable "height".(ËËÑ8œÀ­Å®,
+tpython:S107"XFunction "draw_rec_limb_boxes" has 8 parameters, which is greater than the 7 authorized.(åìŒê8œÀ­Å®,
+Kpython:S1481")Remove the unused local variable "width".(Ÿƒ¥Æûÿÿÿÿ8œÀ­Å®,
+Ppython:S1481".Remove the unused local variable "mid_left_y".(£¤ê‰ÿÿÿÿÿ8œÀ­Å®,
+Lpython:S1481"/Remove the unused local variable "mid_right_y".(âÕßñ8œÀ­Å®,

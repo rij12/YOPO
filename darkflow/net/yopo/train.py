@@ -1,14 +1,10 @@
-import tensorflow.contrib.slim as slim
-import pickle
+import math
+from copy import deepcopy
+
 import tensorflow as tf
+import tensorflow.contrib.slim as slim
 
 from darkflow.net.yopo.calulating_IOU import intersection_over_union, Rectangle
-from .misc import show
-import numpy as np
-import os
-import pprint as pp
-from copy import deepcopy
-import math
 
 
 def loss(self, net_out):
@@ -35,9 +31,7 @@ def loss(self, net_out):
     print('\tclasses = {}'.format(m['classes']))
     print('\tscales  = {}'.format([sprob, sconf, snoob, scoor]))
 
-    # Any 49, 8 So for each cell that class is it?
     size1 = [None, SS, C]
-    # BBox confidence Scoring Tensor
     size2 = [None, SS, B]
 
     _probs = tf.placeholder(tf.float32, size1)
@@ -45,25 +39,14 @@ def loss(self, net_out):
     _coord = tf.placeholder(tf.float32, size2 + [5])
     # weights term for L2 loss
     _proid = tf.placeholder(tf.float32, size1)
-    # material calculating IOU
-    # _areas = tf.placeholder(tf.float32, size2)
-    # _upleft = tf.placeholder(tf.float32, size2 + [2])
-    # _botright = tf.placeholder(tf.float32, size2 + [2])
     _image = tf.placeholder(tf.float32, [None, 2])
-
-    # iou = tf.placeholder(tf.float32, size2)
     iou = tf.placeholder(tf.float32, size2)
-
-    # return the below placeholders
-    # print("Shape of Top left: {}, Bot Right {}".format(_upleft, _botright))
 
     self.placeholders = {
         'probs': _probs, 'confs': _confs, 'coord': _coord, 'proid': _proid,
         'image': _image, 'iou': iou
     }
 
-    # print(self.placeholders[0][0][0])
-    # tf.Tensor.eval(self,)
     # Extract the coordinate prediction from net.out
     coords = net_out[:, SS * (C + B):]
     # Make coords array back into a tensor.
@@ -72,46 +55,10 @@ def loss(self, net_out):
     iou = tf.py_func(calculate_iou, [_image, _coord, coords, iou], tf.float32)
     iou = tf.reshape(iou, [-1, SS, B])
 
-    # coords_print = tf.py_func(yopo_print, [coords], tf.float32)
-    # coords_print.set_shape(coords.get_shape())
-
-    #
-    wh = tf.pow(coords[:, :, :, 2:4], 2) * S  # unit: grid cell
-    area_pred = wh[:, :, :, 0] * wh[:, :, :, 1]  # unit: grid cell^2
-    centers = coords[:, :, :, 0:2]  # [batch, SS, B, 2]
-
-    # Print a box - Might need un-normalised it.
-    # new_wh = tf.py_func(print_box, [centers, wh], tf.float32)
-    # new_wh.set_shape(wh.get_shape())
-
-    floor = centers - (wh * .5)  # [batch, SS, B, 2]
-    ceil = centers + (wh * .5)  # [batch, SS, B, 2]
-
-    # output = tf.Print(_areas, [_areas], "_area tensor")
-    # _area_output = tf.py_func(yopo_print, [area_pred], tf.float32)
-    # _area_output.set_shape(area_pred.get_shape())
-    # print("OUTPUT:", output)
-
-    # calculate the intersection areas
-    # intersect_upleft = tf.maximum(floor, _upleft)
-    # intersect_botright = tf.minimum(ceil, _botright)
-    # intersect_wh = intersect_botright - intersect_upleft
-    # intersect_wh = tf.maximum(intersect_wh, 0.0)
-    # intersect = tf.multiply(intersect_wh[:, :, :, 0], intersect_wh[:, :, :, 1])
-    # intersect_new = tf.py_func(printTensor, [intersect], tf.float32)
-    # intersect_new.set_shape(intersect.get_shape())
-
-    # calculate the best IOU, set 0.0 confidence for worse boxes
-    # iou = tf.truediv(intersect_new, _areas + area_pred - intersect_new, "IOU")
-
-    # print('IOU shape: ', iou)
-
-    # new_iou = tf.py_func(testFunc, [true, net_out], tf.float32)
-    # new_iou.set_shape(iou.get_shape())
-
     best_box = tf.equal(iou, tf.reduce_max(iou, [2], True))
     best_box = tf.to_float(best_box)
-    # Class Probs * box Confidence
+
+    # IOU score * box confidence for final probability score
     confs = tf.multiply(best_box, _confs)
 
     # take care of the weight terms
@@ -127,20 +74,14 @@ def loss(self, net_out):
     conid = slim.flatten(conid)
     coord = slim.flatten(_coord)
     cooid = slim.flatten(cooid)
-    #
-    # coord_list = tf.py_func(printTensor, [coord, coords], tf.float32)
-    # coord_list.set_shape(coord.get_shape())
-    # coord_list[1].set_shape(coords.get_shape())
 
     self.fetch += [probs, confs, conid, cooid, proid]
     true = tf.concat([probs, confs, coord], 1)
 
-    # new_iou = tf.py_func(testFunc, [true, net_out], tf.float32)
-    # new_iou.set_shape(iou.get_shape())
-
     wght = tf.concat([proid, conid, cooid], 1)
     print('Building {} loss'.format(m['model']))
 
+    # Squared Error cost function
     loss = tf.pow(net_out - true, 2)
     loss = tf.multiply(loss, wght)
     loss = tf.reduce_sum(loss, 1)
@@ -148,31 +89,43 @@ def loss(self, net_out):
     tf.summary.scalar('{} loss'.format(m['model']), self.loss)
 
 
-def printTensor(tensor):
-    for x in tensor:
-        print("Best Box ", x)
-        print("length: ", len(x))
-    return tensor
-
-
-# This function is a custom graph operation writen in python.
 def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
-    print("Start calculate_iou")
+    """
+    This function is a custom operation written in python that is to be executed in the TensorFlow graph,
+    the YOPO IOU function that replaces the old function in the YOLO version one algorithm.
+    Unlike the previous version it can handle angles and calculate a an IOU score when two boxes are rotated.
+›
+    :param image_tens: A Tensor that describes the image width and height, used to reverse the normalisation.
+    :param gt_tensor: The Ground Truth Tensor, Contains the Ground Truth i.e where the boxes in the image.
+    :param net_out_tensor: The output from the network i.e where the networks thinks the bbox's are in the image for
+     each class.
+    :param iou: A tensor SS by B in size.
+    :return: iou tensor containing the iou scores for B bounding box for SS cells.
+    """
+
+    print("IOU input tensor lengths: ", len(gt_tensor), len(net_out_tensor))
+
     image_index = 0
     for ground_truth, net_out_tensor in zip(gt_tensor, net_out_tensor):
-        # todo
+
         ground_truth = deepcopy(ground_truth)
         net_out_tensor = deepcopy(net_out_tensor)
         cell_index = 0
+        # Get grid size
         S = math.sqrt(len(ground_truth))
+
+        # Image dimensions
         image_width = image_tens[image_index][0]
         image_height = image_tens[image_index][1]
         print("\nImage", image_index, " W: ", image_width, " H: ", image_height, " S: ", S)
         for ground_truth_cell, net_out_cell in zip(ground_truth, net_out_tensor):
-            # print("Ground Truth Tensor:", ground_truth, "Network out Tensor:", net_out_tensor)
+
             cell_box_index = 0
 
             empty = 5
+
+            # Used to increase performance, it doesn't attempt to calculate IOU
+            # for cell that have no ground truth.
             for c in ground_truth_cell[0]:
                 if c == 0:
                     empty = empty - 1
@@ -185,22 +138,11 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
 
             for ground_truth_box, net_out_box in zip(ground_truth_cell, net_out_cell):
 
-                # # print("*********************** ")
-                # print("Ground Truth")
-                # print(ground_truth_box)
-                # print("net out box")
-                # print(net_out_box)
-
-                # Ground Truth Tensor
-                # TODO FIX GRID CELLS!!!
                 cell_x = cell_index % S
                 cell_y = math.floor(cell_index / S)
 
                 cell_width = (image_width / S)
                 cell_height = (image_height / S)
-
-                # print("Cell width: ", cell_width, " Cell height: ", cell_height)
-                # print("Cell offset x: ", ground_truth_cell[0][0], " Cell offset y: ", ground_truth_cell[0][1])
 
                 centre_x = (cell_width * cell_x) + (ground_truth_box[0] * cell_width)
                 centre_y = (cell_height * cell_y) + (ground_truth_box[1] * cell_height)
@@ -208,23 +150,11 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
                 gt_width = (ground_truth_box[2] ** 2) * image_width
                 gt_height = (ground_truth_box[3] ** 2) * image_height
 
-                print("Angled Ground Truth", ground_truth_box[4])
+                # Demoralise the angle
                 gt_angle = ground_truth_box[4] * 360
-
-
-                # print("NEW At ", cell_index, " CX: ", cell_x, " CY: ", cell_y, " X: ", centre_x, " Y: ", centre_y,
-                #       " W: ", gt_width, " H: ", gt_height)
-                # print("Cell Number", cell_index, " CX: ", cell_x, " CY: ", cell_y)
 
                 # Create ground truth Tensor
                 ground_truth_rec = Rectangle(centre_x, centre_y, gt_width, gt_height, gt_angle)
-                # print("Ground Truth Rectangle", ground_truth_rec, "\n")
-
-                # Network out tensor
-
-                # print("Output Network Tensor")
-
-                # print("Cell offset x: ", net_out_box[0], " Cell offset y: ", net_out_box[1])
 
                 out_net_centre_x = (cell_width * cell_x) + (net_out_box[0] * cell_width)
                 out_net_centre_y = (cell_height * cell_y) + (net_out_box[1] * cell_height)
@@ -232,15 +162,11 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
                 out_net_width = (net_out_box[2] ** 2) * image_width
                 out_net_height = (net_out_box[3] ** 2) * image_height
 
-
-                net_out_angle = net_out_box[4]
-                net_out_angle = net_out_angle * 360
+                # Demoralise the angle
+                net_out_angle = net_out_box[4] * 360
                 print("RAW: Angle Network output", net_out_box[4])
 
                 print("GROUND TRUTH ANGLE", gt_angle, "IOU Calculation Network", net_out_angle)
-                #
-                # print("Output At ", cell_index, " CX: ", cell_x, " CY: ", cell_y, " X: ", out_net_centre_x, " Y: ",
-                #       out_net_centre_y, " W: ", out_net_width, " H: ", out_net_height, 'angle')
 
                 # Create ground truth Tensor
                 out_net_rec = Rectangle(out_net_centre_x, out_net_centre_y, out_net_width, out_net_height,
@@ -254,13 +180,11 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
                 # if cell_index == 51:
                 print("IOU for box {}: {} \n\n".format(cell_box_index, iou_val))
 
-
-                # print("IOU for box ", cell_box_index, ": ", iou_val)
+                #  Assign IOU score to same position inside IOU tensor as the current position.
                 iou[image_index][cell_index][cell_box_index] = iou_val
 
                 cell_box_index = cell_box_index + 1
 
             cell_index = cell_index + 1
         image_index = image_index + 1
-    print("End calculate_iou")
     return iou

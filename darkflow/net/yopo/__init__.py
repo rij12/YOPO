@@ -4,7 +4,7 @@ from . import data
 from . import misc
 import numpy as np
 
-""" YOLO framework __init__ equivalent"""
+""" YOPO framework __init__ equivalent"""
 
 
 def constructor(self, meta, FLAGS):

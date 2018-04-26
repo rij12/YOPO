@@ -1,0 +1,7 @@
+
+4python:S125"Remove this commented out code.(œƒ¥õ
+@python:S1481"*Remove the unused local variable "labels".(££èÓ
+tpython:S117"_Rename this local variable "resultsForJSON" to match the regular expression ^[_a-z][a-z0-9_]*$.(µµõÂ
+ppython:S117"[Rename this local variable "boxResults" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÈÄî¨
+npython:S117"YRename this local variable "textJSON" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ô†¡¨
+spython:S117"YRename this local variable "textFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(É¶¬¦þÿÿÿÿ

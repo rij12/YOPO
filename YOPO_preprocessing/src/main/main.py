@@ -1,6 +1,8 @@
 
 import glob
 import time
+
+from YOPO_preprocessing.src.busniess.draw_keypoints import draw_data_point_on_images
 from YOPO_preprocessing.src.main.config import config
 from YOPO_preprocessing.src.busniess.generate_limb_bbox_darkflow import generate_limb_data
 from YOPO_preprocessing.src.busniess.ground_truth_darknet import create_ground_truth
@@ -29,17 +31,17 @@ if __name__ == "__main__":
 
     # Load image meta data.
     data = load_matlab_data()
+    # print(data)
     start_time = time.time()
     if darkflow:
-        generate_limb_data(image_file_path_list=images, image_metadata=data, train=True)
-        darkflow_sort_images()
+        # generate_limb_data(image_file_path_list=images, image_metadata=data, train=True)
+        # darkflow_sort_images()
+        draw_data_point_on_images(images, data)
 
     else:
         # Generate the ground_truth_text_files.
         create_ground_truth(images, data, limit=500)
-
         # Move images that have just had ground truth text files created for them into the same folder ../../train_yolo/
-        # todo - The program need to ran twice for this to work. YOPO_preprocessing-7
         prepare_train_and_test_data()
 
     print("Finished in %s seconds " % int(time.time() - start_time))

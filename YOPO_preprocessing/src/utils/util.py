@@ -69,7 +69,6 @@ def load_matlab_data():
                     joint_pos = {}
                     for _j_id, (_x, _y) in zip(j_id, zip(x, y)):
                         joint_pos[str(_j_id)] = [float(_x), float(_y)]
-                    # joint_pos = fix_wrong_joints(joint_pos)
 
                     # visiblity list
                     if 'is_visible' in str(annopoint.dtype):
@@ -94,10 +93,6 @@ def load_matlab_data():
                         if img_fn not in all_data:
                             all_data[img_fn] = []
                         all_data[img_fn].append(data_blob)
-
-                        # all_data[FILE_KEY] = [{}{}{}]
-                        # all_
-                        # all_data[img_fn] = data_blob
 
     return all_data
 
@@ -132,7 +127,7 @@ def prepare_train_and_test_data():
 
 def darkflow_sort_images():
     # todo change to config file
-    TRAIN_IMAGES = glob.glob("/home/richard/git/darkflow/YOPO_preprocessing/data/darkflow/labels/*xml")
+    TRAIN_IMAGES = glob.glob(cfg.config['TRAINING_OUTPUT_PATH'] + "*xml")
 
     if len(TRAIN_IMAGES) < 1:
         print("ERROR: Can not find xml files in labels dir")

@@ -1,11 +1,11 @@
-from ...utils.pascal_voc_clean_xml import pascal_voc_clean_xml
-from numpy.random import permutation as perm
-from .predict import preprocess
+import os
 # from .misc import show
 from copy import deepcopy
-import pickle
+
 import numpy as np
-import os
+from numpy.random import permutation as perm
+
+from ...utils.pascal_voc_clean_xml import pascal_voc_clean_xml
 
 
 def parse(self, exclusive=False):
@@ -38,66 +38,44 @@ def _batch(self, chunk):
     path = os.path.join(self.FLAGS.dataset, jpg)
 
     img = self.preprocess(path, allobj)
-    # print("ALL object: ", allobj)
-    # Calculate regression target
-    # Which cell is the object centre in.
 
-    # Find width a of single cell.
-    # print("Cell size", S)
     cellx = 1. * w / S
     celly = 1. * h / S
     print("BATCH INFORMATION HERE: ", cellx, celly, jpg)
     # YOPO Converting all images and labels to darknet format.
     for obj in allobj:
-        # print("CURRENT OBJECT: ", obj)
 
         centerx = .5 * (obj[1] + obj[3])  # xmin, xmax
         centery = .5 * (obj[2] + obj[4])  # ymin, ymax
 
-        # print("centrex: ", centerx, " centrey: ", centery)
-        # print("width: ", (obj[3] - obj[1]), " height: ", (obj[4] - obj[2]))
-
         # Cell x and Cell y are the width and height of the cells in the image.
         cx = centerx / cellx
         cy = centery / celly
-        # print("Centre point x:{}, y:{}".format(centerx, centery))
-        # print("cx:{}, cy:{}".format(cx,cy))
-        # print("WTF: ", obj[4])
 
         if cx >= S or cy >= S: return None, None
-        # print("w: {}, h: {}".format(w, h))
-        # Normalise the value and turn them into darknet format. (YOPO -21)
+
         obj[3] = float(obj[3] - obj[1]) / w # w of image (normalised)
         obj[4] = float(obj[4] - obj[2]) / h # h of image (normalised)
-        # print("Check Sqaure root func, {} {}".format(obj[3], obj[4]))
-        #
+
+        '''
+        Sum-squared error also equally weights errors in large
+        boxes and small boxes. Our error metric should reflect that
+        small deviations in large boxes matter less than in small
+        boxes - YOLOv1 Paper
+        '''
+        # The square root is predicted instead of the actually width and height because:
         obj[3] = np.sqrt(obj[3])
         obj[4] = np.sqrt(obj[4])
-        # print("Check Sqaure root func, AFTER: {} {}".format(obj[3], obj[4]))
-        # print("XXX", obj[1])
-        # print("YYY", obj[2])
+
         # Offset inside cell!
         obj[1] = cx - np.floor(cx)  # off set x for a given cell
         obj[2] = cy - np.floor(cy)  # off set y for a given cell
 
         # Normalise Angle
-
         obj[5] = obj[5] / 360
-
-        # print("AFTER: XXX", obj[1])
-        # print("AFTER: YYY", obj[2])
-        # print("BEN: ", int(np.floor(cy) * S + np.floor(cx)))
-        # print("Benfinal: ", obj[1:5])
         obj += [int(np.floor(cy) * S + np.floor(cx))]
 
-        # print(obj)
-
-    # show(im, allobj, S, w, h, cellx, celly) # unit test
-
-    # Calculate placeholders' values
-    # print(C)
-    # print(B)
-    # print(labels)
+    # show(im, allobj, S, w, h, cellx, celly)  # unit test
 
     probs = np.zeros([S * S, C])
     confs = np.zeros([S * S, B])
@@ -109,24 +87,18 @@ def _batch(self, chunk):
 
     image_tens[0] = w
     image_tens[1] = h
-    # 6 is the prob score?
-    # print("************************")
+
     for obj in allobj:
-        # print("obj", obj)
+
         # All to do with confidence score of the boxes.
         probs[obj[6], :] = [0.] * C
         # Set the confidence score of that class to 1 because it's label so you it's 100% that class.
         probs[obj[6], labels.index(obj[0])] = 1.
         #
         proid[obj[6], :] = [1] * C #
-        # print("BCUNT", obj[1:6])
+
         # Copies Box Coordinates to it's cell and creates three copies of the same box.
         coord[obj[6], :, :] = [obj[1:6]] * B
-
-        # Normalise Angle by 360
-        # print(coord[obj[6], :, :])
-        # coord = coord[obj[6], :, 4]
-        # print(coord[obj[6], :, :])
 
         prear[obj[6], 0] = obj[1] - obj[3] ** 2 * .5 * S  # xleft
         prear[obj[6], 1] = obj[2] - obj[4] ** 2 * .5 * S  # yup

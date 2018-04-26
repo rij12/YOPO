@@ -7,10 +7,12 @@ MPII Dataset Only!
 '''
 
 import math
-import cv2
-import YOPO_preprocessing.src.main.config as cfg
 import xml.etree.cElementTree as ET
 
+import cv2
+from progress.bar import Bar
+
+import YOPO_preprocessing.src.main.config as cfg
 # COLOUR SPACE BGR
 from YOPO_preprocessing.src.busniess.Point import Point
 from YOPO_preprocessing.src.utils.util import midpoint, distance_between_points
@@ -81,12 +83,11 @@ class Limb:
         self.width = width
         self.height = height
 
-
 #  image_file_path_list - A list of all the image with the fill path names.
 #  image_metadata - a python dictionary that contains all pose data for a given image.
 def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=False):
     counter = 0
-
+    bar = Bar('Processing')
     if train:
         limit = cfg.config['TRAIN_SET_IMAGES_NUM']
         OUT_PATH = cfg.config['TRAINING_OUTPUT_PATH']
@@ -102,7 +103,7 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
         counter = counter + 1
 
         # Limits the amount of data
-        if counter > 6000:
+        if counter > 100:
             return
 
         # Remove the full path from the file name
@@ -166,6 +167,7 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
 
                     # Width
                     head_width = head[2] - head[0]
+                    #
                     limb_width = BBOX_WIDTH * head_width / HEAD_SF
 
                     # Get Angle
@@ -184,11 +186,21 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
                         ymin = int(center.y - (limb_width / HALF))
                         ymax = int(center.y + (limb_width / HALF))
 
+                        draw_head(head, img)
+                        img = cv2.rectangle(img, (xmin, ymin), (xmax, ymax), (255, 255, 255), 4)
+                        img = cv2.rectangle(img, (xmin_chest, ymin_chest), (xmax_chest, ymax_chest), (255, 255, 255), 4)
+
                         name = look_up_table[int(joint)]
                         create_XML_entry(root, xmin, xmax, ymin, ymax, angle, name)
 
                 if debug:
-                    cv2.imwrite("../../data/ann_images/{}".format(filename_jpg), img)
+                    '''
+                    Used for manual testing.
+                    '''
+                    # cv2.imwrite("../../data/ann_images/{}".format(filename_jpg), img)
+                    cv2.imwrite(
+                        "/Users/richardjones/git/darkflow/YOPO_preprocessing/data/darkflow/{}".format(filename_jpg),
+                        img)
                     cv2.namedWindow("Display window", cv2.WINDOW_AUTOSIZE)
                     cv2.imshow("Display Window", img)
                     cv2.waitKey(0)
@@ -198,14 +210,15 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
             tree = ET.ElementTree(root)
             XML_OUT = cfg.config['DARKFLOW_XML_OUTPATH']
             tree.write(open('{}{}.xml'.format(XML_OUT, filename), 'w'), encoding='unicode')
-
+            bar.next()
+    bar.finish()
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Drawing Functions
 # ---------------------------------------------------------------------------------------------------------------------
 
 
-def draw_rec_limb_boxes(x0, y0, width, height, angle, img, colour=WHITE, thickness=2):
+def draw_rec_limb_boxes(x0, y0, width, height, angle, img, colour=WHITE, thickness=4):
 
     _angle = math.radians(angle)
     b = math.cos(_angle) * 0.5

@@ -1,0 +1,5 @@
+
+Fpython:S1481")Remove the unused local variable "scope".(ุฆลึ8ส่ยÿฎ,
+mpython:S117"QRename this parameter "FLAGS" to match the regular expression ^[_a-z][a-z0-9_]*$.(๛ÿ•๗8ส่ยÿฎ,
+Jpython:S1481"-Remove the unused local variable "verbalise".(ๆีว8ส่ยÿฎ,
+zpython:S117"YRename this local variable "newFLAGS" to match the regular expression ^[_a-z][a-z0-9_]*$.(ษน‘Û๙ÿÿÿÿ8ส่ยÿฎ,

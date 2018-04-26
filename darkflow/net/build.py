@@ -75,7 +75,6 @@ class TFNet(object):
             if FLAGS.gpu > 0.0 else None
         self.say("GPU Name", device_name)
         with tf.device(device_name):
-            # print(tf.device(device_name))
             with self.graph.as_default() as g:
                 self.build_forward()
                 self.setup_meta_ops()
@@ -107,6 +106,7 @@ class TFNet(object):
 
         # Placeholders
         inp_size = [None] + self.meta['inp_size']
+        print("Network Input Size:", inp_size)
         self.inp = tf.placeholder(tf.float32, inp_size, 'input')
         self.feed = dict()  # other placeholders
 

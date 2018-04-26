@@ -1,0 +1,3 @@
+
+~python:S117"dRename this local variable "requiredDirectories" to match the regular expression ^[_a-z][a-z0-9_]*$.(Û»Èïøÿÿÿÿ
+npython:S1542"SRename function "cliHandler" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ÿÄÎÕûÿÿÿÿ

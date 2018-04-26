@@ -1,10 +1,7 @@
 
-4python:S125"Remove this commented out code.(ş˜Ôå
-9python:S125"Remove this commented out code.(—¬¬ôıÿÿÿÿ
-9python:S125"Remove this commented out code.(ÄÜˆüÿÿÿÿ
-9python:S125"Remove this commented out code.(¯—¨Óùÿÿÿÿ
-9python:S125"Remove this commented out code.(±êÜ¿úÿÿÿÿ
-4python:S125"Remove this commented out code.(çìã‘
-opython:S3776"TRefactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed.(øÛæ’üÿÿÿÿ
-=python:S1481"'Remove the unused local variable "ext".(±±ôû
-Dpython:S1481")Remove the unused local variable "areas".(ÎªÀõşÿÿÿÿ
+@python:S125"Remove this commented out code.(±êÜ¿úÿÿÿÿ8ğ´’¦¯,
+;python:S125"Remove this commented out code.(çìã‘8ğ´’¦¯,
+vpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed.(øÛæ’üÿÿÿÿ8ğ´’¦¯,
+Dpython:S1481"'Remove the unused local variable "ext".(±±ôû8ğ´’¦¯,
+Kpython:S1481")Remove the unused local variable "areas".(ÎªÀõşÿÿÿÿ8ğ´’¦¯,
+;python:S125"Remove this commented out code.(ş˜Ôå8ğ´’¦¯,

@@ -2,7 +2,10 @@ import math
 
 import cv2
 import pyclipper
+"""
 
+
+"""
 
 class Point:
 
@@ -14,6 +17,7 @@ class Point:
 class Rectangle:
 
     def __init__(self, x, y, w, h, angle):
+
         self.x = x
         self.y = y
         self.w = w
@@ -21,8 +25,6 @@ class Rectangle:
         self.angle = angle
 
     def draw(self, image, colour=(140, 140, 140)):
-        # cv2.rectangle(image, (int(self.x - self.w / 2), int(self.y + self.h / 2)),
-        #               (int(self.x + self.w / 2), int(self.y - self.h / 2)), (255, 0, 255), 1)
         pts = self.get_vertices_points()
         draw_polygon(image, pts, colour)
 
@@ -149,7 +151,7 @@ class Rectangle:
 
         return self._area(solution)
 
-    # Green's Theorem
+    # Green's Theorem - Finds area of any simple polygon that only requires the coordinates of each vertex
     def _area(self, p):
         return 0.5 * abs(sum(x0 * y1 - x1 * y0
                              for ((x0, y0), (x1, y1)) in self._segments(p)))
@@ -198,6 +200,8 @@ def intersection_over_union(bbox_ground_truth, bbox_predicted):
     if union == 0:
         return 0
 
+    print("Union: ", union)
+    print("Intersection: ", intersection)
     return intersection / union
 
 
@@ -233,7 +237,10 @@ def check_intersection_is_line(rec):
         return False
 
 
+# Used for Manual tests
 if __name__ == "__main__":
+
+
     print("Calculate IOU of left-lower-arm")
 
     netout_rec = Rectangle(646.7366170883179, 212.04363265207837, 0, 1.0475772630980373,
@@ -246,11 +253,11 @@ if __name__ == "__main__":
     print(check_intersection_is_line(Rectangle(4, 4, 0, 2, -66)))
     print(check_intersection_is_line(Rectangle(4, 4, 2, 0, 99)))
 
-    img = cv2.imread("/home/richard/git/darkflow/sub_set/images/043538940.jpg")
+    img = cv2.imread("/Users/richardjones/git/darkflow/YOPO_preprocessing/data/darkflow/images/000142834.jpg")
 
     #  Ground Truth - left-lower-arm
-    centre_point_x = (1503 + 1553) / 2
-    centre_point_y = (817 + 978) / 2
+    centre_point_x = (1503 + 1553) / 2 # xmax, xmin
+    centre_point_y = (817 + 978) / 2   # ymax, ymin
     print("x: {}, y: {}".format(centre_point_x, centre_point_y))
     angle = -72
     width = 50
@@ -266,35 +273,11 @@ if __name__ == "__main__":
     rec2_h = height
     rec2_angle = 30
     rec2 = Rectangle(rec2_x, rec2_y, rec2_w, rec2_h, rec2_angle)
-    # rec2.draw(img, colour=(0, 0, 255))
 
-    # TODO CLIPPING ERROR!!!
-    rec1 = Rectangle(608.5000010899134, 313.0000001192093, 122.99999113075273, 49.99999667005966, -45.331188440322876)
-    rec2 = Rectangle(571.423647063119, 313.0299306980201,  1.274746256824555,  3.9270291193666402, -35.68650394678116)
-    # rec2 = Rectangle(100, 100, 0, 58.1619032498341, -86.7201919555664)
+    rec1 = Rectangle(125, 125, 160, 160, 90)
+    rec2 = Rectangle(205, 205, 160, 160, 90)
 
-    # IOU
-    # for box 2: 0.6500378368938821
-    # GROUND
-    # TRUTH
-    # ANGLE
-    # 96.29394292831421
-    # NETWORK
-    # ANGLE
-    # 0.25280756
-    # Ground
-    # Truth
-    # Rectangle
-    # Rectangle: x: 745.0, y: 526.000000834465, w: 136.00000770980955, h: 49.999997442956285, angle: 96.29394292831421
-    #
-    # Output
-    # Network
-    # Rectangle
-    # Rectangle: x: 695.4430913925171, y: 490.2400955557823, w: 95.81683375372563, h: 52.13581478280169, angle: 91.01072072982788
 
-    # Calculate IOU
-    # intersection, shape_vertices = rec1.find_intersection_shape_area(rec2, vertices=True)
-    # draw_polygon(img, shape_vertices)
 
     # union, shape_vertices_union = rec1.find_union_shape_area(rec2, vertices=True)
     # draw_polygon(img, shape_vertices_union, colour=(255, 255, 255))
@@ -307,11 +290,6 @@ if __name__ == "__main__":
 
     print("IOU: {}".format(iou))
     cv2.imwrite("output_union.jpg", img)
-
-
-    # Show Points
-
-
 
     # Show result
     cv2.namedWindow("Display window", cv2.WINDOW_AUTOSIZE)

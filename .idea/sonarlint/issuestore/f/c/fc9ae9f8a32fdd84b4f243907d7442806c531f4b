@@ -1,0 +1,4 @@
+
+jpython:S101"NRename class "framework" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(”ДѓЄ8нн®Аѓ,
+rpython:S117"QRename this parameter "FLAGS" to match the regular expression ^[_a-z][a-z0-9_]*$.(ЈвЂўэ€€€€8нн®Аѓ,
+rpython:S117"QRename this parameter "FLAGS" to match the regular expression ^[_a-z][a-z0-9_]*$.(ЕЭРощ€€€€8нн®Аѓ,

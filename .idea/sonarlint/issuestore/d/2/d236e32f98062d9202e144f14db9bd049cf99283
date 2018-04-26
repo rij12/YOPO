@@ -1,0 +1,5 @@
+
+dpython:S107"HMethod "setup" has 8 parameters, which is greater than the 7 authorized.(§ìò¡8öÔŞ€¯,
+npython:S101"RRename class "extract_layer" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(è…—8öÔŞ€¯,
+mpython:S101"QRename class "select_layer" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(Ïº—ñ8öÔŞ€¯,
+ppython:S101"TRename class "connected_layer" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(ÓŞà¸8öÔŞ€¯,

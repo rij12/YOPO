@@ -1,5 +1,6 @@
 from . import yolo
 from . import yolov2
+from . import yopo
 from . import vanilla
 from os.path import basename
 
@@ -44,13 +45,28 @@ class YOLOv2(framework):
     findboxes = yolov2.predict.findboxes
     process_box = yolo.predict.process_box
 
+class YOPO(framework):
+    constructor = yopo.constructor
+    parse = yopo.data.parse
+    shuffle = yopo.data.shuffle
+    preprocess = yopo.predict.preprocess
+    postprocess = yopo.predict.postprocess
+    loss = yopo.train.loss
+    is_inp = yopo.misc.is_inp
+    profile = yopo.misc.profile
+    _batch = yopo.data._batch
+    resize_input = yopo.predict.resize_input
+    findboxes = yopo.predict.findboxes
+    process_box = yopo.predict.process_box
+
 """
 framework factory
 """
 
 types = {
     '[detection]': YOLO,
-    '[region]': YOLOv2
+    '[region]': YOLOv2,
+    '[pose]': YOPO
 }
 
 def create_framework(meta, FLAGS):
