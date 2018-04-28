@@ -10,12 +10,6 @@ mat = sio.loadmat(cfg.config['MATLAB_DATA_FILE_PATH'])
 
 OUTPUT_PATH = cfg.config['OUTPUT_PATH']
 
-
-TRAIN_PATH = "/home/richard/git/yopo/data/train_yolo/train_data"
-TEST_PATH = "/home/richard/git/yopo/data/train_yolo/test_data/"
-YOLO_PATH = "/home/richard/git/yopo/data/train_yolo/"
-
-
 TEST_IMAGES = glob.glob(
     "/home/richard/git/yopo/data/train_yolo/test_data/*.txt")
 TRAIN_IMAGES = glob.glob(
@@ -28,6 +22,10 @@ A Class that has helpful methods for the data postprocessing.
 #  This function is a adapted version of a function from
 #  https://github.com/bearpaw/pytorch-pose/blob/master/pose/datasets/mpii.py
 def load_matlab_data():
+
+    if mat is None:
+        print("Cannot find MatLab datafile")
+
     data = mat.get("results", "")
     """
     Convert annotations mat file to json and save on disk.

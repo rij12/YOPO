@@ -8,12 +8,10 @@ MPII Dataset Only!
 
 import math
 import xml.etree.cElementTree as ET
-
 import cv2
-from progress.bar import Bar
+
 
 import YOPO_preprocessing.src.main.config as cfg
-# COLOUR SPACE BGR
 from YOPO_preprocessing.src.busniess.Point import Point
 from YOPO_preprocessing.src.utils.util import midpoint, distance_between_points
 
@@ -21,6 +19,7 @@ TRAIN_SET_SIZE = 500
 TEST_SET_SIZE = 100
 TEXT_POSITION_MODIFIER_X = 50
 TEXT_POSITION_MODIFIER_Y = 50
+# COLOUR SPACE BGR
 WHITE = 255, 255, 255
 RED = 0, 0, 255
 BBOX_WIDTH = 50
@@ -85,9 +84,18 @@ class Limb:
 
 #  image_file_path_list - A list of all the image with the fill path names.
 #  image_metadata - a python dictionary that contains all pose data for a given image.
-def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=False):
+def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=False, limit=10000000):
+    """
+
+    Generate limb data from the MPII dataset for the DarkFlow network.
+
+    :param image_file_path_list: Array of image file paths
+    :param image_metadata: Python Dict of ground truth files sorted by image file name
+    :param train: Speicifies the dataset to be generated is for training the network, (default=True)
+    :param debug: A debug flag that shows image using OpenCV
+    """
     counter = 0
-    bar = Bar('Processing')
+
     if train:
         limit = cfg.config['TRAIN_SET_IMAGES_NUM']
         OUT_PATH = cfg.config['TRAINING_OUTPUT_PATH']
@@ -99,11 +107,10 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
 
     # For all the image we have select one and perform some operation
     for current_img_full_path in image_file_path_list:
-
         counter = counter + 1
 
         # Limits the amount of data
-        if counter > 100:
+        if counter == limit:
             return
 
         # Remove the full path from the file name
@@ -122,7 +129,7 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
             width = ET.SubElement(size, 'width').text = str(img_width)
             height = ET.SubElement(size, 'height').text = str(img_height)
 
-            # Get the meta data for single image
+            # Get the meta data for single image, indexed by filename O(1)
             current_img_metadata = image_metadata[image_file_name]
 
             for current_pose in current_img_metadata:
@@ -176,10 +183,10 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
                     if int(joint) in LIMB_INDEXS:
                         if int(joint) != 9 and int(joint) != 5:
                             # Draw Head, Arms, Legs, Chest
-                            draw_rec_limb_boxes(center.x, center.y, height_joint, limb_width, angle, img)
+                            _draw_rec_limb_boxes(center.x, center.y, height_joint, limb_width, angle, img)
                             draw_head(head, img)
-                            draw_rec_limb_boxes(chest.centre.x, chest.centre.y, chest.height, chest.width,
-                                                chest.angle, img)
+                            _draw_rec_limb_boxes(chest.centre.x, chest.centre.y, chest.height, chest.width,
+                                                 chest.angle, img)
 
                         xmin = int(center.x - (height_joint / HALF))
                         xmax = int(center.x + (height_joint / HALF))
@@ -197,7 +204,7 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
                     '''
                     Used for manual testing.
                     '''
-                    # cv2.imwrite("../../data/ann_images/{}".format(filename_jpg), img)
+                    cv2.imwrite("../../data/ann_images/{}".format(filename_jpg), img)
                     cv2.imwrite(
                         "/Users/richardjones/git/darkflow/YOPO_preprocessing/data/darkflow/{}".format(filename_jpg),
                         img)
@@ -210,15 +217,27 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
             tree = ET.ElementTree(root)
             XML_OUT = cfg.config['DARKFLOW_XML_OUTPATH']
             tree.write(open('{}{}.xml'.format(XML_OUT, filename), 'w'), encoding='unicode')
-            bar.next()
-    bar.finish()
+    print("Counter", counter)
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Drawing Functions
 # ---------------------------------------------------------------------------------------------------------------------
 
 
-def draw_rec_limb_boxes(x0, y0, width, height, angle, img, colour=WHITE, thickness=4):
+def _draw_rec_limb_boxes(x0, y0, width, height, angle, img, colour=WHITE, thickness=4):
+    """
+    Draws a bounding box on target image.
+
+    :param x0: Centre X point
+    :param y0: Centre Y Point
+    :param width: Bounding box width
+    :param height: Bounding box height
+    :param angle: Bounding box angle
+    :param img: target Image
+    :param colour: Colour of bounding box (Default=White)
+    :param thickness: Thickness of line of bouniding box in pixels (Default=4)
+    :return: Target Image with bounding box draw on the image
+    """
 
     _angle = math.radians(angle)
     b = math.cos(_angle) * 0.5
@@ -233,6 +252,7 @@ def draw_rec_limb_boxes(x0, y0, width, height, angle, img, colour=WHITE, thickne
     cv2.line(img, pt2, pt3, colour, thickness)
     cv2.line(img, pt3, pt0, colour, thickness)
 
+    # Shows Topleft and BotRight
     cv2.line(img, pt0, pt0, (255, 0, 0), thickness)
     cv2.line(img, pt2, pt2, (255, 0, 0), thickness)
 
@@ -267,23 +287,12 @@ def create_joint_entry(current_filename, limb_id, x, y, width, height, angle, im
 
 
 def _create_chest(right_shoulder, left_shoulder, right_hip, left_hip, thorax, pelvis):
-    # Chest Angle
+
     angle = math.degrees(math.atan2(thorax.y - pelvis.y, thorax.x - pelvis.x))
-
-    # Calculates the centre of the chest
-    mid_left_y = midpoint(left_shoulder.x, left_shoulder.y, left_hip.x, left_hip.y)
-    mid_right_y = midpoint(right_shoulder.x, right_shoulder.y, right_hip.x, right_hip.y)
-
-    # Mean Distance between points
-    # center = Point(((mid_left_y[0] + mid_right_y[0]) / 2), (mid_right_y[1] + mid_left_y[1]) / 2)
     center = midpoint(thorax.x, thorax.y, pelvis.x, pelvis.y)
-
-    # Width
     w_top = distance_between_points(left_shoulder.x, left_shoulder.y, right_shoulder.x, right_shoulder.y)
     w_bot = distance_between_points(left_hip.x, left_hip.y, right_hip.x, right_hip.y)
     width = (w_top + w_bot)
-
-    # Height
     height = distance_between_points(thorax.x, thorax.y, pelvis.x, pelvis.y)
 
     return Chest(center, width, height, angle)

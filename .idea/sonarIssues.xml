@@ -113,6 +113,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/darkflow/net/yopo/data.py">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/darkflow/net/yopo/predict.py">
           <value>
             <set />
@@ -123,12 +128,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/darkflow/utils/pascal_voc_clean_xml.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/darkflow/utils/yopo_xml_parser.py">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/runSonarQubeAnalysis.sh">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/sonar-project.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/YOPO/preprocessing.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/YOPO/test_calculate_IOU.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/YOPO/tests/test_calculate_IOU.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/test_darkflow.py">
           <value>
             <set />
           </value>

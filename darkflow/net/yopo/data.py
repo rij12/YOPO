@@ -5,7 +5,7 @@ from copy import deepcopy
 import numpy as np
 from numpy.random import permutation as perm
 
-from ...utils.pascal_voc_clean_xml import pascal_voc_clean_xml
+from ...utils.yopo_xml_parser import yopo_clean_xml
 
 
 def parse(self, exclusive=False):
@@ -16,7 +16,7 @@ def parse(self, exclusive=False):
         msg = 'Annotation directory not found {} .'
         exit('Error: {}'.format(msg.format(ann)))
     print('\n{} parsing {}'.format(meta['model'], ann))
-    dumps = pascal_voc_clean_xml(ann, meta['labels'], exclusive)
+    dumps = yopo_clean_xml(ann, meta['labels'], exclusive)
     return dumps
 
 

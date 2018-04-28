@@ -240,9 +240,6 @@ def check_intersection_is_line(rec):
 # Used for Manual tests
 if __name__ == "__main__":
 
-
-    print("Calculate IOU of left-lower-arm")
-
     netout_rec = Rectangle(646.7366170883179, 212.04363265207837, 0, 1.0475772630980373,
                            0)
 

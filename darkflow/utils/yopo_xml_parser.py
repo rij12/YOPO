@@ -11,7 +11,7 @@ import glob
 def _pp(l): # pretty printing
     for i in l: print('{}: {}'.format(i,l[i]))
 
-def pascal_voc_clean_xml(ANN, pick, exclusive = False):
+def yopo_clean_xml(ANN, pick, exclusive = False):
     print('Parsing for {} {}'.format(
             pick, 'exclusively' * int(exclusive)))
 
@@ -53,7 +53,9 @@ def pascal_voc_clean_xml(ANN, pick, exclusive = False):
                 xx = int(float(xmlbox.find('xmax').text))
                 yn = int(float(xmlbox.find('ymin').text))
                 yx = int(float(xmlbox.find('ymax').text))
-                current = [name,xn,yn,xx,yx]
+                a  = float(xmlbox.find('angle').text)
+                current = [name,xn,yn,xx,yx,a]
+                print(jpg, current)
                 all += [current]
 
         add = [[jpg, [w, h, all]]]

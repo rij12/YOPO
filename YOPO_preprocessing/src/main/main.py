@@ -34,9 +34,9 @@ if __name__ == "__main__":
     # print(data)
     start_time = time.time()
     if darkflow:
-        # generate_limb_data(image_file_path_list=images, image_metadata=data, train=True)
-        # darkflow_sort_images()
-        draw_data_point_on_images(images, data)
+        generate_limb_data(image_file_path_list=images, image_metadata=data, train=True)
+        darkflow_sort_images()
+        # draw_data_point_on_images(images, data)
 
     else:
         # Generate the ground_truth_text_files.
