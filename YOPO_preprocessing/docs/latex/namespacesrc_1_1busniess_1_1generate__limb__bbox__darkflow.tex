@@ -1,0 +1,146 @@
+\hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow}{}\section{src.\+busniess.\+generate\+\_\+limb\+\_\+bbox\+\_\+darkflow Namespace Reference}
+\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow}\index{src.\+busniess.\+generate\+\_\+limb\+\_\+bbox\+\_\+darkflow@{src.\+busniess.\+generate\+\_\+limb\+\_\+bbox\+\_\+darkflow}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsrc_1_1busniess_1_1generate__limb__bbox__darkflow_1_1_chest}{Chest}}
+\item 
+class \mbox{\hyperlink{classsrc_1_1busniess_1_1generate__limb__bbox__darkflow_1_1_limb}{Limb}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a4087ec0a81b85a74384528631c085b8e}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a4087ec0a81b85a74384528631c085b8e}} 
+def {\bfseries generate\+\_\+limb\+\_\+data} (image\+\_\+file\+\_\+path\+\_\+list, image\+\_\+metadata, train=True, debug=True)
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a9f40917be4a9b3724633d1143a0b3237}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a9f40917be4a9b3724633d1143a0b3237}} 
+def {\bfseries draw\+\_\+rec\+\_\+limb\+\_\+boxes} (x0, y0, width, height, angle, img, colour=W\+H\+I\+TE, thickness=4)
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_afd7a5a78d4fa4ed18a2e2cfd96c38466}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_afd7a5a78d4fa4ed18a2e2cfd96c38466}} 
+def {\bfseries draw\+\_\+head} (head, img)
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a19003ae8330279750358703ad352a510}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a19003ae8330279750358703ad352a510}} 
+def {\bfseries is\+\_\+joint\+\_\+visible} (joint\+\_\+id, pose\+\_\+meta\+\_\+data)
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_af40581e70383fc9c23763c5fff507bde}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_af40581e70383fc9c23763c5fff507bde}} 
+def {\bfseries create\+\_\+joint\+\_\+entry} (current\+\_\+filename, limb\+\_\+id, x, y, width, height, angle, img, O\+U\+T\+\_\+\+P\+A\+TH, limb\+\_\+width)
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_adf14908c22d918a20375bfadbad6e783}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_adf14908c22d918a20375bfadbad6e783}} 
+def {\bfseries create\+\_\+chest} (current\+\_\+pose)
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_aaaf2d7d4639c5239011cdee7069da46f}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_aaaf2d7d4639c5239011cdee7069da46f}} 
+def {\bfseries create\+\_\+\+X\+M\+L\+\_\+entry} (root, xmin, xmax, ymin, ymax, angle, name)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a0bd50bedb72083c204e3cc2da436d379}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a0bd50bedb72083c204e3cc2da436d379}} 
+int {\bfseries T\+R\+A\+I\+N\+\_\+\+S\+E\+T\+\_\+\+S\+I\+ZE} = 500
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a459c5a69fd8e60e8f15075b79b6bd6b7}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a459c5a69fd8e60e8f15075b79b6bd6b7}} 
+int {\bfseries T\+E\+S\+T\+\_\+\+S\+E\+T\+\_\+\+S\+I\+ZE} = 100
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a64111eeeb78396c3a2ddb204c031daf9}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a64111eeeb78396c3a2ddb204c031daf9}} 
+int {\bfseries T\+E\+X\+T\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+M\+O\+D\+I\+F\+I\+E\+R\+\_\+X} = 50
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_aaae2800690c0c22d90b6e874ce2a8619}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_aaae2800690c0c22d90b6e874ce2a8619}} 
+int {\bfseries T\+E\+X\+T\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+M\+O\+D\+I\+F\+I\+E\+R\+\_\+Y} = 50
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_ae046606c5e22d6e0632e49291bec208c}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_ae046606c5e22d6e0632e49291bec208c}} 
+int {\bfseries W\+H\+I\+TE} = 255, 255, 255
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a8e92492b260053f0b9f402378a4871cc}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a8e92492b260053f0b9f402378a4871cc}} 
+int {\bfseries R\+ED} = 0, 0, 255
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_ad8c410e4963868ca60830e2ac064b543}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_ad8c410e4963868ca60830e2ac064b543}} 
+int {\bfseries B\+B\+O\+X\+\_\+\+W\+I\+D\+TH} = 50
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a56978034a0809e89f271114b4456f9f4}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a56978034a0809e89f271114b4456f9f4}} 
+int {\bfseries H\+E\+A\+D\+\_\+\+SF} = 70
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a12cb0649ed696943426c8600167489d2}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a12cb0649ed696943426c8600167489d2}} 
+list {\bfseries L\+I\+M\+B\+\_\+\+I\+N\+D\+E\+XS} = \mbox{[}0, 1, 3, 4, 10, 11, 13, 14\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a55f8e43c205346664443acc6dbf8ad2c}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a55f8e43c205346664443acc6dbf8ad2c}} 
+int {\bfseries I\+M\+A\+G\+E\+\_\+\+P\+R\+O\+C\+E\+S\+S\+\_\+\+L\+I\+M\+IT} = 4000
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_aa03242f16fe2c8e8d2b55a713fbef132}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_aa03242f16fe2c8e8d2b55a713fbef132}} 
+int {\bfseries H\+A\+LF} = 2
+\item 
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a5d4e47b00ededdab6e55860cebfc215e}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a5d4e47b00ededdab6e55860cebfc215e}} 
+float {\bfseries F\+L\+O\+A\+T\+\_\+\+H\+A\+LF} = 2.\+0
+\item 
+dictionary {\bfseries object\+\_\+id}
+\item 
+dictionary {\bfseries limb\+\_\+ids}
+\item 
+dictionary {\bfseries look\+\_\+up\+\_\+table}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Generates bbox's for all the image in a given set of images.
+
+MPII Dataset Only!\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a7cb73c6ec274a8cf4f93ecefe2b5a27e}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a7cb73c6ec274a8cf4f93ecefe2b5a27e}} 
+\index{src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow@{src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow}!limb\+\_\+ids@{limb\+\_\+ids}}
+\index{limb\+\_\+ids@{limb\+\_\+ids}!src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow@{src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow}}
+\subsubsection{\texorpdfstring{limb\+\_\+ids}{limb\_ids}}
+{\footnotesize\ttfamily dictionary src.\+busniess.\+generate\+\_\+limb\+\_\+bbox\+\_\+darkflow.\+limb\+\_\+ids}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'left-lower-leg'}: 0,
+3     \textcolor{stringliteral}{'left-upper-leg'}: 1,
+4     \textcolor{stringliteral}{'right-lower-leg'}: 2,
+5     \textcolor{stringliteral}{'right-upper-leg'}: 3,
+6     \textcolor{stringliteral}{'left-lower-arm'}: 4,
+7     \textcolor{stringliteral}{'left-upper-arm'}: 5,
+8     \textcolor{stringliteral}{'right-lower-arm'}: 6,
+9     \textcolor{stringliteral}{'right-upper-arm'}: 7,
+10     \textcolor{stringliteral}{'chest'}: 8,
+11     \textcolor{stringliteral}{'head'}: 9
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a06e652953c22965788f70bcea0117009}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a06e652953c22965788f70bcea0117009}} 
+\index{src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow@{src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow}!look\+\_\+up\+\_\+table@{look\+\_\+up\+\_\+table}}
+\index{look\+\_\+up\+\_\+table@{look\+\_\+up\+\_\+table}!src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow@{src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow}}
+\subsubsection{\texorpdfstring{look\+\_\+up\+\_\+table}{look\_up\_table}}
+{\footnotesize\ttfamily dictionary src.\+busniess.\+generate\+\_\+limb\+\_\+bbox\+\_\+darkflow.\+look\+\_\+up\+\_\+table}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{0: \textcolor{stringliteral}{'left-lower-leg'},
+2                  1: \textcolor{stringliteral}{'left-upper-leg'},
+3                  3: \textcolor{stringliteral}{'right-lower-leg'},
+4                  4: \textcolor{stringliteral}{'right-upper-leg'},
+5                  10: \textcolor{stringliteral}{'left-lower-arm'},
+6                  11: \textcolor{stringliteral}{'left-upper-arm'},
+7                  13: \textcolor{stringliteral}{'right-lower-arm'},
+8                  14: \textcolor{stringliteral}{'right-upper-arm'}
+9                  \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a7f8ea5a0eecabd051f09dcd825023962}\label{namespacesrc_1_1busniess_1_1generate__limb__bbox__darkflow_a7f8ea5a0eecabd051f09dcd825023962}} 
+\index{src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow@{src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow}!object\+\_\+id@{object\+\_\+id}}
+\index{object\+\_\+id@{object\+\_\+id}!src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow@{src\+::busniess\+::generate\+\_\+limb\+\_\+bbox\+\_\+darkflow}}
+\subsubsection{\texorpdfstring{object\+\_\+id}{object\_id}}
+{\footnotesize\ttfamily dictionary src.\+busniess.\+generate\+\_\+limb\+\_\+bbox\+\_\+darkflow.\+object\+\_\+id}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{0: \textcolor{stringliteral}{'left-lower-leg'},
+2              1: \textcolor{stringliteral}{'left-upper-leg'},
+3              2: \textcolor{stringliteral}{'right-lower-leg'},
+4              3: \textcolor{stringliteral}{'right-upper-leg'},
+5              4: \textcolor{stringliteral}{'left-lower-arm'},
+6              5: \textcolor{stringliteral}{'left-upper-arm'},
+7              6: \textcolor{stringliteral}{'right-lower-arm'},
+8              7: \textcolor{stringliteral}{'right-upper-arm'},
+9              8: \textcolor{stringliteral}{'chest'},
+10              9: \textcolor{stringliteral}{'head'}
+11              \}
+\end{DoxyCode}
