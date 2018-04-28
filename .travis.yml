@@ -29,7 +29,7 @@ install:
 
 # command to run tests
 script:
-    - sonar-scanner -x
+    - sonar-scanner -X
     - export PYTHONPATH=$PWD
     - python3 test/YOPO/test_calculate_IOU.py
     - python3 test/test_darkflow.py
