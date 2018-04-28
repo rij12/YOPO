@@ -50,3 +50,5 @@ ckpt/*
 test_images/
 voc/
 sub_set/large_sub_set_100/
+YOPO_preprocessing/output*
+sub_set/
