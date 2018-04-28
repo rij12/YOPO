@@ -9,7 +9,7 @@ addons:
   sonarcloud:
     organization: "yopo"
     token:
-      secure: TOKEN
+      secure: $SONAR_TOKEN
 
 jdk:
   - oraclejdk8
