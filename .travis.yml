@@ -7,7 +7,7 @@ python:
 
 addons:
   sonarcloud:
-    organization: "yopo-GitHub"
+    organization: "yopo"
     token:
       secure: TOKEN
 
