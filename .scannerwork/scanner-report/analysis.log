@@ -1,0 +1,168 @@
+Environment variables:
+  - Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.akPKUPPWte/Render
+  - DISPLAY=/private/tmp/com.apple.launchd.ifbahVxGjG/org.macosforge.xquartz:0
+  - HOME=/Users/richardjones
+  - JAVA_HOME=/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre
+  - JAVA_MAIN_CLASS_30028=org.sonarsource.scanner.cli.Main
+  - LANG=en_GB.UTF-8
+  - LOGNAME=richardjones
+  - PATH=/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/bin/::/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+  - PWD=/Users/richardjones/git/darkflow
+  - SECURITYSESSIONID=186a8
+  - SHELL=/bin/bash
+  - SHLVL=1
+  - SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.SuNqlZN7eD/Listeners
+  - TERM=xterm-256color
+  - TERM_PROGRAM=Apple_Terminal
+  - TERM_PROGRAM_VERSION=404
+  - TERM_SESSION_ID=F17BEA7E-76D3-4ED3-87D0-248BA26A9C37
+  - TMPDIR=/var/folders/28/tmsln36n4tj9wh50sqs8gtl00000gn/T/
+  - USER=richardjones
+  - XPC_FLAGS=0x0
+  - XPC_SERVICE_NAME=0
+  - __CF_USER_TEXT_ENCODING=0x1F5:0x0:0x2
+System properties:
+  - awt.toolkit=sun.lwawt.macosx.LWCToolkit
+  - file.encoding=UTF-8
+  - file.encoding.pkg=sun.io
+  - file.separator=/
+  - ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16
+  - gopherProxySet=false
+  - http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16
+  - java.awt.graphicsenv=sun.awt.CGraphicsEnvironment
+  - java.awt.headless=true
+  - java.awt.printerjob=sun.lwawt.macosx.CPrinterJob
+  - java.class.path=/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/lib/sonar-scanner-cli-3.1.0.1141.jar
+  - java.class.version=52.0
+  - java.endorsed.dirs=/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/lib/endorsed
+  - java.ext.dirs=/Users/richardjones/Library/Java/Extensions:/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+  - java.home=/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre
+  - java.io.tmpdir=/var/folders/28/tmsln36n4tj9wh50sqs8gtl00000gn/T/
+  - java.library.path=/Users/richardjones/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+  - java.runtime.name=Java(TM) SE Runtime Environment
+  - java.runtime.version=1.8.0_121-b13
+  - java.specification.name=Java Platform API Specification
+  - java.specification.vendor=Oracle Corporation
+  - java.specification.version=1.8
+  - java.vendor=Oracle Corporation
+  - java.vendor.url=http://java.oracle.com/
+  - java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+  - java.version=1.8.0_121
+  - java.vm.info=mixed mode
+  - java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+  - java.vm.specification.name=Java Virtual Machine Specification
+  - java.vm.specification.vendor=Oracle Corporation
+  - java.vm.specification.version=1.8
+  - java.vm.vendor=Oracle Corporation
+  - java.vm.version=25.121-b13
+  - line.separator=
+
+  - os.arch=x86_64
+  - os.name=Mac OS X
+  - os.version=10.13.4
+  - path.separator=:
+  - project.home=/Users/richardjones/git/darkflow
+  - scanner.home=/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx
+  - socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16
+  - sun.arch.data.model=64
+  - sun.boot.class.path=/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/lib/resources.jar:/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/lib/rt.jar:/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/lib/sunrsasign.jar:/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/lib/jsse.jar:/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/lib/jce.jar:/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/lib/charsets.jar:/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/lib/jfr.jar:/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/classes
+  - sun.boot.library.path=/Users/richardjones/software/sonar-scanner-3.1.0.1141-macosx/jre/lib
+  - sun.cpu.endian=little
+  - sun.cpu.isalist=
+  - sun.io.unicode.encoding=UnicodeBig
+  - sun.java.command=org.sonarsource.scanner.cli.Main -Dsonar.projectKey=yopo-sonar -Dsonar.organization=yopo -Dsonar.sources=YOPO_preprocessing/src,darkflow -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=f5c56d29c5edf518722768e102049f293364764d -Dsonar.tests=test -X -Dsonar.cfamily.build-wrapper-output.bypass=true
+  - sun.java.launcher=SUN_STANDARD
+  - sun.jnu.encoding=UTF-8
+  - sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+  - sun.os.patch.level=unknown
+  - user.country=GB
+  - user.dir=/Users/richardjones/git/darkflow
+  - user.home=/Users/richardjones
+  - user.language=en
+  - user.name=richardjones
+  - user.timezone=Europe/London
+SonarQube plugins:
+  - CVS 1.0 (scmcvs)
+  - Bitbucket Authentication for SonarQube 1.0 (authbitbucket)
+  - Branch 7.1.1.10702 (branch)
+  - Svn 1.8.0.1060 (scmsvn)
+  - Billing 7.1.1.10702 (billing)
+  - SonarPLSQL 3.2.0.1753 (plsql)
+  - SonarC# 7.0.1.4822 (csharp)
+  - SonarJava 5.3.0.13828 (java)
+  - SonarWeb 2.6.0.1053 (web)
+  - SonarFlex 2.4.0.1222 (flex)
+  - SonarXML 1.5.0.1373 (xml)
+  - SonarTS 1.6.0.2388 (typescript)
+  - SonarVB 5.0.1.374 (vbnet)
+  - SonarSwift 3.2.0.2276 (swift)
+  - GitHub 1.4.2.1027 (github)
+  - SonarCFamily 5.1.0.10083 (cpp)
+  - SonarPython 1.9.1.2080 (python)
+  - GitHub Authentication for SonarQube 1.4.0.574 (authgithub)
+  - Mercurial 1.1.1 (scmmercurial)
+  - SonarGo 0.2.0.875 (go)
+  - Microsoft Authentication for SonarCloud 1.0.0.129 (authmicrosoft)
+  - SonarTSQL 1.2.0.2539 (tsql)
+  - SonarJS 4.1.0.6085 (javascript)
+  - License 3.3.0.1493 (license)
+  - Git 1.4.0.1037 (scmgit)
+  - HA 7.1.1.10702 (ha)
+  - SonarPHP 2.13.0.3107 (php)
+  - Developer 7.1.1.10702 (developer)
+  - SonarABAP 3.6.0.1269 (abap)
+  - SVG Badges 3.0.1 (status)
+Global properties:
+  - email.from=noreply@sonarcloud.io
+  - email.prefix=[SonarCloud]
+  - sonar.auth.bitbucket.enabled=true
+  - sonar.auth.github.allowUsersToSignUp=true
+  - sonar.auth.github.enabled=true
+  - sonar.auth.microsoft.enabled=true
+  - sonar.core.id=AWHW8ct9-T_TB3XqouNu
+  - sonar.core.serverBaseURL=https://sonarcloud.io
+  - sonar.core.startTime=2018-04-24T12:32:38+0200
+  - sonar.cpd.cross_project=false
+  - sonar.dbcleaner.daysBeforeDeletingClosedIssues=730
+  - sonar.dbcleaner.weeksBeforeDeletingAllSnapshots=480
+  - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByMonth=4
+  - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByWeek=1
+  - sonar.java.collectAnalysisErrors=true
+  - sonar.leak.period=30
+  - sonar.lf.aboutText=<div class="boxed-group" style="border: none; border-radius: 3px;">
+  <div class="boxed-group-inner clearfix" style="padding: 30px; border-radius: 3px; border: #e6e6e6 1px solid; background: #f3f3f3;">
+    <div style="overflow: hidden; line-height: 1.5; font-size: 16px;">
+      <p>
+Analyze your open source and private projects on SonarCloud.
+Select your <a href="https://about.sonarcloud.io">plan</a> and start improving. 
+      </p>
+    </div>
+  </div>
+</div>
+  - sonar.lf.enableGravatar=true
+  - sonar.lf.logoUrl=https://about.sonarcloud.io/images/SonarCloud-white-210px.png
+  - sonar.lf.logoWidthPx=105
+  - sonar.organizations.anyoneCanCreate=true
+  - sonar.organizations.createPersonalOrg=true
+  - sonar.plsql.file.suffixes=sql,tab,pkb
+  - sonar.tsql.file.suffixes=.tsql
+Settings for module: yopo-sonar
+  - sonar.cfamily.build-wrapper-output.bypass=true
+  - sonar.host.url=https://sonarcloud.io
+  - sonar.links.ci=https://travis-ci.com/YOPO
+  - sonar.links.homepage=https://github.com/rij12/YOPO
+  - sonar.links.issue=https://github.com/rij12/YOPO/issues
+  - sonar.links.scm=https://github.com/rij12/YOPO
+  - sonar.login=******
+  - sonar.organization=yopo
+  - sonar.projectBaseDir=/Users/richardjones/git/darkflow
+  - sonar.projectKey=yopo-sonar
+  - sonar.projectName=Standard SQ-Scanner-based project analyzed on SonarCloud using Travis
+  - sonar.projectVersion=1.0-SNAPSHOT
+  - sonar.scanner.app=ScannerCli
+  - sonar.scanner.appVersion=3.1.0.1141
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=YOPO_preprocessing/src,darkflow
+  - sonar.tests=test
+  - sonar.verbose=true
+  - sonar.working.directory=/Users/richardjones/git/darkflow/.scannerwork

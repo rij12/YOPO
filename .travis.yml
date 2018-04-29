@@ -25,6 +25,7 @@ cache:
 # command to install dependencies
 install: 
     - pip3 install -r requirements.txt
+    - pip3 install -r test/requirements-testing.txt
     - pip3 install -e .
 
 # command to run tests
@@ -32,7 +33,7 @@ script:
     - sonar-scanner -X
     - export PYTHONPATH=$PWD
     - python3 test/YOPO/test_calculate_IOU.py
-    - python3 test/test_darkflow.py
+    - pytest -x --cov=./
 
 
 #Upload code coverage statistics
