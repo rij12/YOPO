@@ -7,6 +7,14 @@ This Project is based on a open source version called Darkflow which can be foun
 ![Build Status](https://travis-ci.com/rij12/YOPO.svg?token=an4QsGxZQ9sn7osFx53B&branch=develop)
 
 
+## YOPO
+
+The project was developed with pycharm so to run it from the command you must export this path: 
+
+```bash
+export PYTHONPATH=/home/richard/git/darkflow
+```
+
 
 Real-time object detection and classification. Paper: [version 1](https://arxiv.org/pdf/1506.02640.pdf), [version 2](https://arxiv.org/pdf/1612.08242.pdf).
 
@@ -281,12 +289,4 @@ flow --pbLoad built_graph/yolo.pb --metaLoad built_graph/yolo.meta --imgdir samp
 If you'd like to load a `.pb` and `.meta` file when using `return_predict()` you can set the `"pbLoad"` and `"metaLoad"` options in place of the `"model"` and `"load"` options you would normally set.
 
 That's all.
-
-## YOPO
-
-The project was developed with pycharm so to run it from the command you must export this path: 
-
-```bash
-export PYTHONPATH=/home/richard/git/darkflow
-```
 
