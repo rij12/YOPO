@@ -7,6 +7,9 @@ python:
 
 addons:
   sonarcloud:
+      branches:
+      - yopo
+      - develop
     organization: "yopo"
     token:
       secure: $SONAR_TOKEN
