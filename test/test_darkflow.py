@@ -13,7 +13,6 @@ import pytest
 
 #Settings
 buildPath = os.environ.get("TRAVIS_BUILD_DIR")
-buildPath = "/Users/richardjones/git/darkflow"
 
 if buildPath is None:
     print()
