@@ -103,7 +103,7 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
     :return: iou tensor containing the iou scores for B bounding box for SS cells.
     """
 
-    print("IOU input tensor lengths: ", len(gt_tensor), len(net_out_tensor))
+    # print("IOU input tensor lengths: ", len(gt_tensor), len(net_out_tensor))
 
     image_index = 0
     for ground_truth, net_out_tensor in zip(gt_tensor, net_out_tensor):
@@ -117,7 +117,7 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
         # Image dimensions
         image_width = image_tens[image_index][0]
         image_height = image_tens[image_index][1]
-        print("\nImage", image_index, " W: ", image_width, " H: ", image_height, " S: ", S)
+        # print("\nImage", image_index, " W: ", image_width, " H: ", image_height, " S: ", S)
         for ground_truth_cell, net_out_cell in zip(ground_truth, net_out_tensor):
 
             cell_box_index = 0

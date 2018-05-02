@@ -84,7 +84,7 @@ class Limb:
 
 #  image_file_path_list - A list of all the image with the fill path names.
 #  image_metadata - a python dictionary that contains all pose data for a given image.
-def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=False, limit=10000000):
+def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=False, limit=3000):
     """
 
     Generate limb data from the MPII dataset for the DarkFlow network.
@@ -202,12 +202,10 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
 
                 if debug:
                     '''
-                    Used for manual testing.
+                    Used for manual testing. 
                     '''
-                    cv2.imwrite("../../data/ann_images/{}".format(filename_jpg), img)
-                    cv2.imwrite(
-                        "/Users/richardjones/git/darkflow/YOPO_preprocessing/data/darkflow/{}".format(filename_jpg),
-                        img)
+                    cv2.imwrite(cfg.config['OUTPUT_PATH'] + "{}".format(filename_jpg), img)
+                    cv2.imwrite(cfg.config['OUTPUT_PATH'] + "{}".format(filename_jpg), img)
                     cv2.namedWindow("Display window", cv2.WINDOW_AUTOSIZE)
                     cv2.imshow("Display Window", img)
                     cv2.waitKey(0)

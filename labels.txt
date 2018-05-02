@@ -1,5 +1,5 @@
 left-lower-leg
-left-uppper-leg
+left-upper-leg
 right-lower-leg
 right-upper-leg
 left-lower-arm

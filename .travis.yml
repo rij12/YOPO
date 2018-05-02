@@ -29,10 +29,10 @@ install:
 
 # command to run tests
 script:
-    - sonar-scanner -X
+
     - export PYTHONPATH=$PWD
     - python3 test/YOPO/test_calculate_IOU.py
-    - pytest -x --cov=./
+    - sudo pytest -x --cov=./
 
 
 #Upload code coverage statistics

@@ -163,7 +163,7 @@ class Rectangle:
         return "Rectangle: x: {}, y: {}, w: {}, h: {}, angle: {}".format(self.x, self.y, self.w, self.h, self.angle)
 
 
-def draw_polygon(image, pts, colour=(51, 255, 51), thickness=2):
+def draw_polygon(image, pts, colour=(255, 255, 255), thickness=2):
     """
     Draws a rectangle on a given image.
 
@@ -240,6 +240,8 @@ def check_intersection_is_line(rec):
 # Used for Manual tests
 if __name__ == "__main__":
 
+    IMAGE_PATH = "/home/richard/git/YOPO/sub_set/images/040967287.jpg"
+
     netout_rec = Rectangle(646.7366170883179, 212.04363265207837, 0, 1.0475772630980373,
                            0)
 
@@ -250,7 +252,7 @@ if __name__ == "__main__":
     print(check_intersection_is_line(Rectangle(4, 4, 0, 2, -66)))
     print(check_intersection_is_line(Rectangle(4, 4, 2, 0, 99)))
 
-    img = cv2.imread("/Users/richardjones/git/darkflow/YOPO_preprocessing/data/darkflow/images/000142834.jpg")
+    img = cv2.imread(IMAGE_PATH)
 
     #  Ground Truth - left-lower-arm
     centre_point_x = (1503 + 1553) / 2 # xmax, xmin

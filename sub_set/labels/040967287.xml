@@ -5,33 +5,23 @@
         <height>1080</height>
     </size>
     <object>
-        <name>right-lower-leg</name>
+        <name>chest</name>
         <bndbox>
-            <xmin>755</xmin>
-            <xmax>939</xmax>
-            <ymin>612</ymin>
-            <ymax>662</ymax>
-            <angle>73.24104158281911</angle>
+            <xmin>624</xmin>
+            <xmax>913</xmax>
+            <ymin>315</ymin>
+            <ymax>502</ymax>
+            <angle>-95.37437737232439</angle>
         </bndbox>
     </object>
     <object>
-        <name>right-upper-arm</name>
+        <name>head</name>
         <bndbox>
-            <xmin>860</xmin>
-            <xmax>964</xmax>
-            <ymin>371</ymin>
-            <ymax>421</ymax>
-            <angle>106.32685351056502</angle>
-        </bndbox>
-    </object>
-    <object>
-        <name>left-upper-leg</name>
-        <bndbox>
-            <xmin>645</xmin>
-            <xmax>842</xmax>
-            <ymin>630</ymin>
-            <ymax>680</ymax>
-            <angle>-90.0</angle>
+            <xmin>708.0</xmin>
+            <xmax>795.0</xmax>
+            <ymin>74.0</ymin>
+            <ymax>201.0</ymax>
+            <angle>55.58732131823714</angle>
         </bndbox>
     </object>
     <object>
@@ -39,29 +29,9 @@
         <bndbox>
             <xmin>661</xmin>
             <xmax>850</xmax>
-            <ymin>822</ymin>
-            <ymax>872</ymax>
-            <angle>-97.31348862803165</angle>
-        </bndbox>
-    </object>
-    <object>
-        <name>left-upper-arm</name>
-        <bndbox>
-            <xmin>547</xmin>
-            <xmax>670</xmax>
-            <ymin>288</ymin>
-            <ymax>338</ymax>
-            <angle>-45.33118578841539</angle>
-        </bndbox>
-    </object>
-    <object>
-        <name>left-lower-arm</name>
-        <bndbox>
-            <xmin>546</xmin>
-            <xmax>652</xmax>
-            <ymin>373</ymin>
-            <ymax>423</ymax>
-            <angle>-129.25133658271224</angle>
+            <ymin>815</ymin>
+            <ymax>878</ymax>
+            <angle>-97.31348862803166</angle>
         </bndbox>
     </object>
     <object>
@@ -69,9 +39,49 @@
         <bndbox>
             <xmin>763</xmin>
             <xmax>962</xmax>
-            <ymin>798</ymin>
-            <ymax>848</ymax>
+            <ymin>791</ymin>
+            <ymax>854</ymax>
             <angle>96.37211139693251</angle>
+        </bndbox>
+    </object>
+    <object>
+        <name>left-upper-leg</name>
+        <bndbox>
+            <xmin>645</xmin>
+            <xmax>842</xmax>
+            <ymin>623</ymin>
+            <ymax>686</ymax>
+            <angle>-90.0</angle>
+        </bndbox>
+    </object>
+    <object>
+        <name>left-upper-arm</name>
+        <bndbox>
+            <xmin>547</xmin>
+            <xmax>670</xmax>
+            <ymin>281</ymin>
+            <ymax>344</ymax>
+            <angle>-45.33118578841539</angle>
+        </bndbox>
+    </object>
+    <object>
+        <name>right-upper-arm</name>
+        <bndbox>
+            <xmin>860</xmin>
+            <xmax>963</xmax>
+            <ymin>364</ymin>
+            <ymax>427</ymax>
+            <angle>106.32685351056502</angle>
+        </bndbox>
+    </object>
+    <object>
+        <name>right-lower-leg</name>
+        <bndbox>
+            <xmin>755</xmin>
+            <xmax>938</xmax>
+            <ymin>605</ymin>
+            <ymax>668</ymax>
+            <angle>73.24104158281911</angle>
         </bndbox>
     </object>
     <object>
@@ -79,9 +89,19 @@
         <bndbox>
             <xmin>838</xmin>
             <xmax>947</xmax>
-            <ymin>279</ymin>
-            <ymax>329</ymax>
-            <angle>51.666659890901364</angle>
+            <ymin>272</ymin>
+            <ymax>335</ymax>
+            <angle>51.66665989090137</angle>
+        </bndbox>
+    </object>
+    <object>
+        <name>left-lower-arm</name>
+        <bndbox>
+            <xmin>546</xmin>
+            <xmax>651</xmax>
+            <ymin>366</ymin>
+            <ymax>429</ymax>
+            <angle>-129.25133658271224</angle>
         </bndbox>
     </object>
 </annotation>
