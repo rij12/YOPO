@@ -55,6 +55,9 @@ YOPO_preprocessing/data/darkflow/labels/*
 sub_set/
 playground
 YOPO_preprocessing/output/*
+.pytest_cache/
+tensorboard/
+tensorboardtrain/
 
 # Complied cython files
 darkflow/cython_utils/*.so
