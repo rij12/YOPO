@@ -12,9 +12,9 @@ TEST_SET_IMAGES_NUM - The amount of images you want to validate the network on.
 
 config = {
     'MATLAB_DATA_FILE_PATH': "../../data/mpii_human_pose_v1_u12_1.mat",
-    # 'MATLAB_DATA_FILE_PATH': "/home/richard/git/yopo/data/mpii_human_pose_v1_u12_1.mat",
     'TRAIN_SET_IMAGES_NUM': 3000,
     'TEST_SET_IMAGES_NUM': 1000,
+    # Set the this to the folder where you downloaded the MPII dataset images.
     'IMAGE_PATH': "/media/richard/data1/images/images/",
     'TRAINING_OUTPUT_PATH': "../../data/darkflow/labels/",
     'TESTING_OUT_PATH': "../../data/train_yolo/test_data/",

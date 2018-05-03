@@ -50,6 +50,8 @@ ckpt/*
 test_images/
 voc/
 sub_set/large_sub_set_100/
-YOPO_preprocessing/output*
+YOPO_preprocessing/data/darkflow/images/*
+YOPO_preprocessing/data/darkflow/labels/*
 sub_set/
 playground
+YOPO_preprocessing/output/*
