@@ -1,14 +1,14 @@
-## Intro
+
 
 [![Build Status](https://travis-ci.com/rij12/YOPO.svg?token=an4QsGxZQ9sn7osFx53B&branch=develop)](https://travis-ci.com/rij12/YOPO) 
 
-Real-time object detection and classification. Paper: [version 1](https://arxiv.org/pdf/1506.02640.pdf), [version 2](https://arxiv.org/pdf/1612.08242.pdf).
 
-Read more about YOLO (in darknet) and download weight files [here](http://pjreddie.com/darknet/yolo/). In case the weight file cannot be found, I uploaded some of mine [here](https://drive.google.com/drive/folders/0B1tW_VtY7onidEwyQ2FtQVplWEU), which include `yolo-full` and `yolo-tiny` of v1.0, `tiny-yolo-v1.1` of v1.1 and `yolo`, `tiny-yolo-voc` of v2.
+# YOPO
 
-## Acknowledgments
+Is an adaptation of the YOLOv1 algorithm and made using Darkflow. Where by a new framework is added that is based on the original YOLOv1 framework in Darkflow. 
 
-This project is an adapted folk of Darkflow (https://github.com/thtrieu/darkflow), with the attempt of creating a human pose estimation system. 
+
+YOPO is split into two parts: the pre-processing and the YOPO network. 
 
 
 ### Getting started
@@ -23,12 +23,6 @@ This project is an adapted folk of Darkflow (https://github.com/thtrieu/darkflow
     pip3 install -r requirements.txt --user
     ```
 
-# YOPO
-
-Is an adaptation of the YOLOv1 algorithm and made using Darkflow. Where by a new framework is added that is based on the original YOLOv1 framework in Darkflow. 
-
-
-YOPO is split into two parts: the pre-processing and the YOPO network. 
 
 ### YOPO preprocessing
 
@@ -98,7 +92,16 @@ The weight outputted from the training of the network are save in a folder calle
 
     ```
     
-    
+
+
+
+## Acknowledgments
+
+This project is an adapted folk of Darkflow (https://github.com/thtrieu/darkflow), with the attempt of creating a human pose estimation system. 
+
+YOLO papers, Real-time object detection and classification. Paper: [version 1](https://arxiv.org/pdf/1506.02640.pdf), [version 2](https://arxiv.org/pdf/1612.08242.pdf).
+
+Read more about YOLO (in darknet) and download weight files [here](http://pjreddie.com/darknet/yolo/).
     
 
 
