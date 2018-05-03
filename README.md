@@ -76,9 +76,9 @@ The preprocessing part requires:
     * --batch defines the amount of image that be processed through the network at once. If you have less 16GB RAM or VRAM batch size must be less 16 or it throw CUDA out of memory error.
     
   
-    
+    ```
     python3 ./flow --model NETWORK_CONFIG_PATH --load YOLO_WEIGHTS_PATH --train --annotation LABELS_PATH --dataset DATASET_PATH --epoch 20000 --gpu 0.9 --summary OUTPATH --batch 8
-    
+    ```
 
 
 The weight outputted from the training of the network are save in a folder called ckpt that will be create during training. 

@@ -6,10 +6,7 @@
     <bookmark url="file://$PROJECT_DIR$/darkflow/net/yopo/train.py" line="190" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aa2a4d5-6272-4f30-973a-893f06fb2a77" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/test/YOPO/preprocessing.py" afterPath="$PROJECT_DIR$/test/YOPO/preprocessing.py" />
-    </list>
+    <list default="true" id="9aa2a4d5-6272-4f30-973a-893f06fb2a77" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,8 +69,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="180">
-                <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <first_editor relative-caret-position="36">
+                <caret line="2" column="95" lean-forward="false" selection-start-line="2" selection-start-column="88" selection-end-line="2" selection-end-column="95" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -1117,8 +1114,8 @@ y_axis_len = len(set(y_axis))</expression-string>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="180">
-            <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <first_editor relative-caret-position="36">
+            <caret line="2" column="95" lean-forward="false" selection-start-line="2" selection-start-column="88" selection-end-line="2" selection-end-column="95" />
             <folding />
           </first_editor>
           <second_editor />
