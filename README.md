@@ -23,9 +23,7 @@ YOPO is split into two parts: the pre-processing and the YOPO network.
     pip3 install -r requirements.txt --user
     ```
 
-
 ### YOPO preprocessing
-
 
 
 The preprocessing part requires:

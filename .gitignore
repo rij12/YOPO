@@ -55,3 +55,6 @@ YOPO_preprocessing/data/darkflow/labels/*
 sub_set/
 playground
 YOPO_preprocessing/output/*
+
+# Complied cython files
+darkflow/cython_utils/*.so

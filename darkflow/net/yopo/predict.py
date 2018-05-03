@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 import os
 import json
-from ...cython_utils.cy_yolo_findboxes import yolo_box_constructor
+from ...cython_utils.cy_yopo_findboxes import yopo_box_constructor
 from darkflow.net.yopo.calulating_IOU import Rectangle, draw_polygon
 
 
@@ -50,7 +50,7 @@ def findboxes(self, net_out):
     threshold = FLAGS.threshold
 
     boxes = []
-    boxes = yolo_box_constructor(meta, net_out, threshold)
+    boxes = yopo_box_constructor(meta, net_out, threshold)
 
     return boxes
 
