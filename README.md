@@ -9,18 +9,14 @@ Read more about YOLO (in darknet) and download weight files [here](http://pjredd
 
 ### Getting started
 
-You can choose _one_ of the following three ways to get started with darkflow.
-
-1. 
-
-2. Let pip install darkflow globally in dev mode (still globally accessible, but changes to the code immediately take effect)
+1. Let pip install darkflow globally in dev mode (still globally accessible, but changes to the code immediately take effect)
     ```
-    pip install -e .
+    pip3 install -e .
     ```
 
-3. Install with pip globally
+2. Install with pip globally
     ```
-    pip install .
+    pip3 install -r requirements.txt --user
     ```
 
 # YOPO
@@ -51,6 +47,7 @@ The preprocessing part requires:
 
     ```
     python3 setup.py build_ext --inplace
+
     ```
     
 3. Each limb is defined in a text file labels.txt
