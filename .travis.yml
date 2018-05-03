@@ -32,8 +32,5 @@ script:
 
     - export PYTHONPATH=$PWD
     - python3 test/YOPO/test_calculate_IOU.py
-#    - sudo pytest -x --cov=./
+    - sudo pytest -x --cov=./
 
-
-#Upload code coverage statistics
-#after_success:
