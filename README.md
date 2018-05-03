@@ -1,6 +1,6 @@
 
 
-[![Build Status](https://travis-ci.com/rij12/YOPO.svg?token=an4QsGxZQ9sn7osFx53B&branch=develop)](https://travis-ci.com/rij12/YOPO) 
+[![Build Status](https://travis-ci.com/rij12/YOPO.svg?token=an4QsGxZQ9sn7osFx53B&branch=yopo)](https://travis-ci.com/rij12/YOPO) 
 
 
 # YOPO
