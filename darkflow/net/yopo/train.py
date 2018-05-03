@@ -21,8 +21,6 @@ def loss(self, net_out):
     scoor = float(m['coord_scale'])
     S, B, C = m['side'], m['num'], m['classes']
 
-    print("Number of Grid Cells", S)
-
     SS = S * S  # number of grid cells
 
     print('{} loss hyper-parameters:'.format(m['model']))
@@ -103,7 +101,7 @@ def calculate_iou(image_tens, gt_tensor, net_out_tensor, iou):
     :return: iou tensor containing the iou scores for B bounding box for SS cells.
     """
 
-    # print("IOU input tensor lengths: ", len(gt_tensor), len(net_out_tensor))
+    print("IOU input tensor lengths: ", len(gt_tensor), len(net_out_tensor))
 
     image_index = 0
     for ground_truth, net_out_tensor in zip(gt_tensor, net_out_tensor):

@@ -124,7 +124,7 @@ class TFNet(object):
 
         self.top = state
         self.out = tf.identity(state.out, name='output')
-        # print(self.out)
+
 
     def setup_meta_ops(self):
         cfg = dict({

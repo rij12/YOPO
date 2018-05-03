@@ -57,7 +57,6 @@ def load_matlab_data():
                                  float(head_y2[0, 0])]
                     scale = anno['annorect']['scale'][0]
                     obj_pos = anno['annorect']['objpos']
-                    # print(obj_pos[0][0])
 
                     # joint coordinates
                     annopoint = annopoint['point'][0, 0]
@@ -102,7 +101,7 @@ def prepare_train_and_test_data():
         train_img_path = train_img_path + "\n"
 
         filename = x.rsplit('/', 1)[-1].split('.')[0] + ".jpg"
-        # print("{}{}".format(IMAGES_PATH, filename, TRAIN_PATH))
+        print("{}{}".format(IMAGES_PATH, filename, TRAIN_PATH))
         shutil.copy2("{}{}".format(
             cfg.config['IMAGE_PATH'], filename), "{}".format(TRAIN_PATH))
 
@@ -118,7 +117,7 @@ def prepare_train_and_test_data():
 
         shutil.copy2("{}{}".format(
             cfg.config['IMAGE_PATH'], filename), "{}".format(TEST_PATH))
-        # print("Test File out path {}". format(OUTPUT_PATH + "{}".format("test.txt")))
+        print("Test File out path {}". format(OUTPUT_PATH + "{}".format("test.txt")))
         with open(OUTPUT_PATH + "{}".format("test.txt"), 'a') as out:
             out.write(train_img_path)
 
@@ -137,7 +136,6 @@ def darkflow_sort_images():
         train_img_path = train_img_path + "\n"
 
         filename = x.rsplit('/', 1)[-1].split('.')[0] + ".jpg"
-        # print("{}{}".format(IMAGES_PATH, filename, TRAIN_PATH))
         shutil.copy2("{}{}".format(cfg.config['IMAGE_PATH'], filename), "{}".format(
             cfg.config['DARKFLOW_IMAGES_OUTPATH']))
 

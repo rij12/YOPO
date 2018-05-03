@@ -13,7 +13,7 @@ import pytest
 
 #Settings
 buildPath = os.environ.get("TRAVIS_BUILD_DIR")
-buildPath = "/home/richard/git/YOPO"
+
 
 if buildPath is None:
     print()

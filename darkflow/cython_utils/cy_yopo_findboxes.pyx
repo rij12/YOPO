@@ -46,7 +46,7 @@ def yopo_box_constructor(meta, np.ndarray[float] net_out, float threshold):
             coords[grid, b, 4] =  coords[grid, b, 4]
             for class_loop in range(C):
                 probs[grid, class_loop] = probs[grid, class_loop] * confs[grid, b]
-                #print("PROBS",probs[grid,class_loop])
+                # print("PROBS",probs[grid,class_loop])
                 if(probs[grid,class_loop] > threshold ):
                     final_probs[grid, b, class_loop] = probs[grid, class_loop]
     
