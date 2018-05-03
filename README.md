@@ -65,7 +65,7 @@ The preprocessing part requires:
     * --epoch How many the epoch should be executed before the network stops. 
     * --gpu Optional flag but recommended. The percentage of GPU usage that Darkflow is allows to use for training the network.  
     * --summary Optional flag for the TensorBoard event file to be save for later use in TensorBoard. 
-    * --batch defines the amount of image that be processed through the network at once. If you have less 16GB RAM or VRAM batch size must be less 16 or it throw CUDA out of memory error.
+    * --batch defines the amount of image that be processed through the network at once. If you have a small amount of RAM or VRAM use a low batchsize. 
     
   
     ```
