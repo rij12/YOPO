@@ -23,13 +23,26 @@ if __name__ == "__main__":
         print("ERROR: CANNOT FIND IMAGE DATA!")
         exit(-1)
 
+    # Define test and train sets:
+
+    trainSet = int(len(images) * 0.8)
+    testSet = int(len(images) * 0.2)
+    train = images[:trainSet]
+    test = images[trainSet:]
+
     # Load image meta data.
     data = load_matlab_data()
 
     start_time = time.time()
 
     # Generate Limb data and sort them into folder read for training the network
-    generate_limb_data(image_file_path_list=images, image_metadata=data, train=True)
-    darkflow_sort_images()
+
+    # Train dataset
+    generate_limb_data(image_file_path_list=train, image_metadata=data, train=True)
+    darkflow_sort_images(train=train)
+
+    # Test dataset
+    generate_limb_data(image_file_path_list=test, image_metadata=data, train=False)
+    darkflow_sort_images(train=False)
 
     print("Finished in %s seconds " % int(time.time() - start_time))

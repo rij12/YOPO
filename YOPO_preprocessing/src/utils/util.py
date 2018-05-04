@@ -10,10 +10,10 @@ mat = sio.loadmat(cfg.config['MATLAB_DATA_FILE_PATH'])
 
 OUTPUT_PATH = cfg.config['OUTPUT_PATH']
 
-
 '''
 A Class that has helpful methods for the data postprocessing.
 '''
+
 
 #  This function is a adapted version of a function from
 #  https://github.com/bearpaw/pytorch-pose/blob/master/pose/datasets/mpii.py
@@ -26,9 +26,7 @@ def load_matlab_data():
     Convert annotations mat file to json and save on disk.
     Only persons with annotations of all 16 joints will be written in the json.
     """
-    joint_data_fn = 'mpii_human_pose_v1_u12_1.json'
     all_data = {}
-    fp = open(joint_data_fn, 'w')
 
     for i, (anno, train_flag) in enumerate(
             zip(mat['RELEASE']['annolist'][0, 0][0],
@@ -89,22 +87,34 @@ def load_matlab_data():
     return all_data
 
 
-def darkflow_sort_images():
-
+def darkflow_sort_images(train=True):
     TRAIN_IMAGES = glob.glob(cfg.config['TRAINING_OUTPUT_PATH'] + "*xml")
+    TEST_IMAGES = glob.glob(cfg.config['TESTING_OUTPUT_PATH'] + "*xml")
 
-    if len(TRAIN_IMAGES) < 1:
+    if len(TRAIN_IMAGES) < 1 or len(TEST_IMAGES) < 1:
         print("ERROR: Can not find xml files in labels dir")
 
-    print(len(TRAIN_IMAGES))
-    for x in TRAIN_IMAGES:
-        train_img_path = x.split('.')[0] + ".jpg"
-        # break to next line
-        train_img_path = train_img_path + "\n"
+    if train:
+        print("Train image: ", len(TRAIN_IMAGES))
+        for x in TRAIN_IMAGES:
+            train_img_path = x.split('.')[0] + ".jpg"
+            # break to next line
+            train_img_path = train_img_path + "\n"
 
-        filename = x.rsplit('/', 1)[-1].split('.')[0] + ".jpg"
-        shutil.copy2("{}{}".format(cfg.config['IMAGE_PATH'], filename), "{}".format(
-            cfg.config['DARKFLOW_IMAGES_OUTPATH']))
+            filename = x.rsplit('/', 1)[-1].split('.')[0] + ".jpg"
+            shutil.copy2("{}{}".format(cfg.config['IMAGE_PATH'], filename), "{}".format(
+                cfg.config['DARKFLOW_IMAGES_OUTPATH']))
+    else:
+
+        print("Test image: ", len(TEST_IMAGES))
+        for x in TEST_IMAGES:
+            train_img_path = x.split('.')[0] + ".jpg"
+            # break to next line
+            train_img_path = train_img_path + "\n"
+
+            filename = x.rsplit('/', 1)[-1].split('.')[0] + ".jpg"
+            shutil.copy2("{}{}".format(cfg.config['IMAGE_PATH'], filename), "{}".format(
+                cfg.config['DARKFLOW_IMAGES_OUTPATH_TEST']))
 
 
 # Get point of a box when given a centre point, width, height and angle.

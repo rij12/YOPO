@@ -84,7 +84,7 @@ class Limb:
 
 #  image_file_path_list - A list of all the image with the fill path names.
 #  image_metadata - a python dictionary that contains all pose data for a given image.
-def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=False, limit=1200000000):
+def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=False):
     """
 
     Generate limb data from the MPII dataset for the DarkFlow network.
@@ -95,14 +95,15 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
     :param debug: A debug flag that shows image using OpenCV
     """
     counter = 0
+    # default training set!
+    limit = cfg.config['TRAIN_SET_IMAGES_NUM']
+    OUT_PATH = cfg.config['DARKFLOW_XML_OUTPATH']
+    image_file_path_list = image_file_path_list[cfg.config['TEST_SET_IMAGES_NUM']:]
 
-    if train:
-        limit = cfg.config['TRAIN_SET_IMAGES_NUM']
-        OUT_PATH = cfg.config['TRAINING_OUTPUT_PATH']
-        image_file_path_list = image_file_path_list[cfg.config['TEST_SET_IMAGES_NUM']:]
-    else:
+    # Test set
+    if not train:
         limit = cfg.config['TEST_SET_IMAGES_NUM']
-        OUT_PATH = cfg.config['TESTING_OUT_PATH']
+        OUT_PATH = cfg.config['DARKFLOW_XML_OUTPATH_test']
         image_file_path_list = image_file_path_list[:cfg.config['TEST_SET_IMAGES_NUM']]
 
     # For all the image we have select one and perform some operation
@@ -212,7 +213,7 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
             filename = filename_jpg.split('.jpg')[0]
             # Write to file
             tree = ET.ElementTree(root)
-            XML_OUT = cfg.config['DARKFLOW_XML_OUTPATH']
+            XML_OUT = OUT_PATH
             tree.write(open('{}{}.xml'.format(XML_OUT, filename), 'w'), encoding='unicode')
     print("Counter", counter)
 
