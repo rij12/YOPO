@@ -8,15 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9aa2a4d5-6272-4f30-973a-893f06fb2a77" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/draw_grid_cells.py" afterPath="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/draw_grid_cells.py" />
-      <change beforePath="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/draw_keypoints.py" afterPath="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/draw_keypoints.py" />
-      <change beforePath="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/generate_limb_bbox_darkflow.py" afterPath="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/generate_limb_bbox_darkflow.py" />
-      <change beforePath="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/ground_truth_darknet.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/YOPO_preprocessing/src/main/main.py" afterPath="$PROJECT_DIR$/YOPO_preprocessing/src/main/main.py" />
-      <change beforePath="$PROJECT_DIR$/YOPO_preprocessing/src/utils/util.py" afterPath="$PROJECT_DIR$/YOPO_preprocessing/src/utils/util.py" />
-      <change beforePath="$PROJECT_DIR$/darkflow/net/yopo/calulating_IOU.py" afterPath="$PROJECT_DIR$/darkflow/net/yopo/calulating_IOU.py" />
-      <change beforePath="$PROJECT_DIR$/test/YOPO/test_calculate_IOU.py" afterPath="$PROJECT_DIR$/test/YOPO/test_calculate_IOU.py" />
+      <change beforePath="$PROJECT_DIR$/test/test_darkflow.py" afterPath="$PROJECT_DIR$/test/test_darkflow.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,19 +40,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="648">
-                <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YOPO_preprocessing/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
@@ -103,11 +82,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generate_limb_bbox_darkflow.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="generate_limb_bbox_darkflow.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YOPO_preprocessing/src/busniess/generate_limb_bbox_darkflow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+            <state relative-caret-position="-1386">
+              <caret line="113" column="18" lean-forward="false" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_darkflow.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/test_darkflow.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="210" column="65" lean-forward="true" selection-start-line="210" selection-start-column="65" selection-end-line="210" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -244,7 +243,6 @@
         <option value="$PROJECT_DIR$/darkflow/net/yopo/train.py" />
         <option value="$PROJECT_DIR$/darkflow/cython_utils/cy_yolo_findboxes.pyx" />
         <option value="$PROJECT_DIR$/darkflow/cython_utils/cy_yopo_findboxes.pyx" />
-        <option value="$PROJECT_DIR$/test/test_darkflow.py" />
         <option value="$PROJECT_DIR$/test/YOPO/test_calculate_IOU.py" />
         <option value="$PROJECT_DIR$/darkflow/net/yopo/calulating_IOU.py" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -255,6 +253,7 @@
         <option value="$PROJECT_DIR$/YOPO_preprocessing/src/utils/util.py" />
         <option value="$PROJECT_DIR$/YOPO_preprocessing/src/main/main.py" />
         <option value="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/generate_limb_bbox_darkflow.py" />
+        <option value="$PROJECT_DIR$/test/test_darkflow.py" />
       </list>
     </option>
   </component>
@@ -296,47 +295,7 @@
             <path>
               <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
               <item name="YOPO" type="462c0819:PsiDirectoryNode" />
-              <item name="YOPO_preprocessing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YOPO" type="462c0819:PsiDirectoryNode" />
-              <item name="YOPO_preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YOPO" type="462c0819:PsiDirectoryNode" />
-              <item name="YOPO_preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="darkflow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YOPO" type="462c0819:PsiDirectoryNode" />
-              <item name="YOPO_preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YOPO" type="462c0819:PsiDirectoryNode" />
-              <item name="YOPO_preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="busniess" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YOPO" type="462c0819:PsiDirectoryNode" />
-              <item name="YOPO_preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YOPO" type="462c0819:PsiDirectoryNode" />
-              <item name="YOPO_preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -733,8 +692,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3908397" sideWeight="0.51282054" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3258595" sideWeight="0.91382766" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.4871795" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258595" sideWeight="0.91382766" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32810163" sideWeight="0.4871795" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11222445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -975,14 +934,6 @@ y_axis_len = len(set(y_axis))</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/log_overfitted">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -1051,14 +1002,6 @@ y_axis_len = len(set(y_axis))</expression-string>
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_darkflow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1213,8 +1156,24 @@ y_axis_len = len(set(y_axis))</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/YOPO_preprocessing/src/busniess/generate_limb_bbox_darkflow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        <state relative-caret-position="-1386">
+          <caret line="113" column="18" lean-forward="false" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_darkflow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="210" column="65" lean-forward="true" selection-start-line="210" selection-start-column="65" selection-end-line="210" selection-end-column="65" />
           <folding />
         </state>
       </provider>
