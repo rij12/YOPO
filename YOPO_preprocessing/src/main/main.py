@@ -11,9 +11,9 @@ images = glob.glob("{}*jpg".format(config['IMAGE_PATH']))
 Process chain 
 
 1. Take the MatLab data files and convert them to python dict 
-2. Take image set and generate ground truths in the YOLO or Darkflow format 
-3. Output bounding boxes using YOLO ground truth information.
-4. Move Images and text files into folder ready for the network.
+2. Split data into train set and test (default 80:20)
+3. Take image set and generate ground truths for Darkflow 
+4. Sort images and XML files into correct folder ready for training  
 
 '''
 

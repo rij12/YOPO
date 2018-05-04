@@ -6,12 +6,7 @@
     <bookmark url="file://$PROJECT_DIR$/darkflow/net/yopo/train.py" line="188" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aa2a4d5-6272-4f30-973a-893f06fb2a77" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/generate_limb_bbox_darkflow.py" afterPath="$PROJECT_DIR$/YOPO_preprocessing/src/busniess/generate_limb_bbox_darkflow.py" />
-      <change beforePath="$PROJECT_DIR$/YOPO_preprocessing/src/main/config.py" afterPath="$PROJECT_DIR$/YOPO_preprocessing/src/main/config.py" />
-      <change beforePath="$PROJECT_DIR$/YOPO_preprocessing/src/main/main.py" afterPath="$PROJECT_DIR$/YOPO_preprocessing/src/main/main.py" />
-      <change beforePath="$PROJECT_DIR$/YOPO_preprocessing/src/utils/util.py" afterPath="$PROJECT_DIR$/YOPO_preprocessing/src/utils/util.py" />
-    </list>
+    <list default="true" id="9aa2a4d5-6272-4f30-973a-893f06fb2a77" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +23,7 @@
     <SUITE FILE_PATH="coverage/YOPO$Nosetests_for_test_calculate_IOU_TestCalculateIOU_test.coverage" NAME="Nosetests for test_calculate_IOU.TestCalculateIOU.test Coverage Results" MODIFIED="1525399128600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/YOPO" />
     <SUITE FILE_PATH="coverage/YOPO$Nosetests_in_test_calculate_IOU_py.coverage" NAME="Nosetests in test_calculate_IOU.py Coverage Results" MODIFIED="1525399660670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/YOPO" />
     <SUITE FILE_PATH="coverage/YOPO$draw_keypoints.coverage" NAME="draw_keypoints Coverage Results" MODIFIED="1525400133369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YOPO_preprocessing/src/busniess" />
-    <SUITE FILE_PATH="coverage/YOPO$flow_new.coverage" NAME="flow_new Coverage Results" MODIFIED="1525403592726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/YOPO$flow_new.coverage" NAME="flow_new Coverage Results" MODIFIED="1525408163082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/darkflow$YOLO_Preprocessing.coverage" NAME="YOLO_Preprocessing Coverage Results" MODIFIED="1524710907680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YOPO_preprocessing/src/main" />
     <SUITE FILE_PATH="coverage/YOPO$calulating_IOU__1_.coverage" NAME="calulating_IOU (1) Coverage Results" MODIFIED="1525090283023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/darkflow/net/yopo" />
     <SUITE FILE_PATH="coverage/darkflow$scratch_3.coverage" NAME="scratch_3 Coverage Results" MODIFIED="1523963910761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
@@ -38,7 +33,7 @@
     <SUITE FILE_PATH="coverage/darkflow$main.coverage" NAME="main Coverage Results" MODIFIED="1523560961103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YOPO_preprocessing/src/main" />
     <SUITE FILE_PATH="coverage/darkflow$flow_test.coverage" NAME="flow_test Coverage Results" MODIFIED="1523217925560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/darkflow$Nosetests_in_test_rectangle_py.coverage" NAME="Nosetests in test_rectangle.py Coverage Results" MODIFIED="1523563710459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YOPO_preprocessing/tests/busniess" />
-    <SUITE FILE_PATH="coverage/YOPO$flow_test.coverage" NAME="flow_test Coverage Results" MODIFIED="1525403627577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/YOPO$flow_test.coverage" NAME="flow_test Coverage Results" MODIFIED="1525408202771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -54,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generate_limb_bbox_darkflow.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="generate_limb_bbox_darkflow.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YOPO_preprocessing/src/busniess/generate_limb_bbox_darkflow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="104" column="32" lean-forward="false" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
+            <state relative-caret-position="265">
+              <caret line="91" column="58" lean-forward="true" selection-start-line="91" selection-start-column="58" selection-end-line="91" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -127,7 +122,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/YOPO_preprocessing/src/main/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
@@ -296,12 +291,6 @@
               <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
               <item name="YOPO" type="462c0819:PsiDirectoryNode" />
               <item name="YOPO_preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YOPO" type="462c0819:PsiDirectoryNode" />
-              <item name="YOPO_preprocessing" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -367,7 +356,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.YOLO_Preprocessing">
+  <component name="RunManager" selected="Python.flow_test">
     <configuration name="YOLO_Preprocessing" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1189,16 +1178,6 @@ y_axis_len = len(set(y_axis))</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YOPO_preprocessing/src/main/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="27" column="37" lean-forward="false" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YOPO_preprocessing/src/utils/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -1211,9 +1190,19 @@ y_axis_len = len(set(y_axis))</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/YOPO_preprocessing/src/busniess/generate_limb_bbox_darkflow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="104" column="32" lean-forward="false" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
+        <state relative-caret-position="265">
+          <caret line="91" column="58" lean-forward="true" selection-start-line="91" selection-start-column="58" selection-end-line="91" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YOPO_preprocessing/src/main/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="27" column="37" lean-forward="false" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
