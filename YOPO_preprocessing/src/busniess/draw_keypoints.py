@@ -1,5 +1,10 @@
 import cv2
 
+
+"""
+This python file is used to draw MPII joints on a image. 
+"""
+
 IMAGE_OUTPUT_PATH = "../../output/images/"
 
 TEXT_POSITION_MODIFIER_X = -5
@@ -21,15 +26,7 @@ def joint_colour(num):
 
 
 def draw_data_point_on_images(images, img_data):
-    """
 
-    :param images:
-    :param image_path:
-    :param img_data:
-    :return:
-    """
-
-    # print(images)
 
     for x in range(0, 50):
         # Get image
@@ -48,8 +45,8 @@ def draw_data_point_on_images(images, img_data):
                 head_data = current_img_data[pose_key]['head_rect']
 
                 # Draw head bounding box - .x1, .y1, .x2, .y2
-                # cv2.rectangle(img, (int(head_data[0]), int(head_data[1])), (int(head_data[2]), int(head_data[3])),
-                #               HEAD_REC_COLOUR, 3)
+                cv2.rectangle(img, (int(head_data[0]), int(head_data[1])), (int(head_data[2]), int(head_data[3])),
+                              HEAD_REC_COLOUR, 3)
 
                 for joint_id in range(0, 16):
                     # Draw points
@@ -64,13 +61,13 @@ def draw_data_point_on_images(images, img_data):
                                 fontScale=TEXT_SCALE,
                                 thickness=TEXT_THICKNESS)
 
-                    # if joint_id < 15:
-                    #     draw_limb(img, joint_data[str(joint_id)], joint_data[str(joint_id + 1)], joint_id)
-                    # else:
-                    #     draw_limb(img, joint_data[str(joint_id)], joint_data[str(joint_id - 1)], joint_id)
+                    if joint_id < 15:
+                        draw_limb(img, joint_data[str(joint_id)], joint_data[str(joint_id + 1)], joint_id)
+                    else:
+                        draw_limb(img, joint_data[str(joint_id)], joint_data[str(joint_id - 1)], joint_id)
 
             # Write the image to file
-            cv2.imwrite("/Users/richardjones/git/darkflow/YOPO_preprocessing/output" + image_file_name, img)
+            cv2.imwrite(IMAGE_OUTPUT_PATH + image_file_name, img)
 
 
 def draw_limb(img, start_point, end_point, joint_id):

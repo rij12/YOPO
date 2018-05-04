@@ -10,7 +10,6 @@ import math
 import xml.etree.cElementTree as ET
 import cv2
 
-
 import YOPO_preprocessing.src.main.config as cfg
 from YOPO_preprocessing.src.busniess.Point import Point
 from YOPO_preprocessing.src.utils.util import midpoint, distance_between_points
@@ -82,9 +81,10 @@ class Limb:
         self.width = width
         self.height = height
 
+
 #  image_file_path_list - A list of all the image with the fill path names.
 #  image_metadata - a python dictionary that contains all pose data for a given image.
-def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=False, limit=3000):
+def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=False, limit=1200000000):
     """
 
     Generate limb data from the MPII dataset for the DarkFlow network.
@@ -110,7 +110,7 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
         counter = counter + 1
 
         # Limits the amount of data
-        if counter == limit:
+        if limit == counter:
             return
 
         # Remove the full path from the file name
@@ -174,7 +174,6 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
 
                     # Width
                     head_width = head[2] - head[0]
-                    #
                     limb_width = BBOX_WIDTH * head_width / HEAD_SF
 
                     # Get Angle
@@ -216,6 +215,7 @@ def generate_limb_data(image_file_path_list, image_metadata, train=True, debug=F
             XML_OUT = cfg.config['DARKFLOW_XML_OUTPATH']
             tree.write(open('{}{}.xml'.format(XML_OUT, filename), 'w'), encoding='unicode')
     print("Counter", counter)
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Drawing Functions
@@ -285,7 +285,6 @@ def create_joint_entry(current_filename, limb_id, x, y, width, height, angle, im
 
 
 def _create_chest(right_shoulder, left_shoulder, right_hip, left_hip, thorax, pelvis):
-
     angle = math.degrees(math.atan2(thorax.y - pelvis.y, thorax.x - pelvis.x))
     center = midpoint(thorax.x, thorax.y, pelvis.x, pelvis.y)
     w_top = distance_between_points(left_shoulder.x, left_shoulder.y, right_shoulder.x, right_shoulder.y)

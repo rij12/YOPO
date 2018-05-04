@@ -10,10 +10,6 @@ mat = sio.loadmat(cfg.config['MATLAB_DATA_FILE_PATH'])
 
 OUTPUT_PATH = cfg.config['OUTPUT_PATH']
 
-TEST_IMAGES = glob.glob(
-    "/home/richard/git/yopo/data/train_yolo/test_data/*.txt")
-TRAIN_IMAGES = glob.glob(
-    "/home/richard/git/yopo/data/train_yolo/train_data/labels/*.txt")
 
 '''
 A Class that has helpful methods for the data postprocessing.
@@ -22,7 +18,6 @@ A Class that has helpful methods for the data postprocessing.
 #  This function is a adapted version of a function from
 #  https://github.com/bearpaw/pytorch-pose/blob/master/pose/datasets/mpii.py
 def load_matlab_data():
-
     if mat is None:
         print("Cannot find MatLab datafile")
 
@@ -94,36 +89,8 @@ def load_matlab_data():
     return all_data
 
 
-def prepare_train_and_test_data():
-    for x in TRAIN_IMAGES:
-        train_img_path = x.split('.')[0] + ".jpg"
-        # break to next line
-        train_img_path = train_img_path + "\n"
-
-        filename = x.rsplit('/', 1)[-1].split('.')[0] + ".jpg"
-        print("{}{}".format(IMAGES_PATH, filename, TRAIN_PATH))
-        shutil.copy2("{}{}".format(
-            cfg.config['IMAGE_PATH'], filename), "{}".format(TRAIN_PATH))
-
-        with open(OUTPUT_PATH + "{}".format("train.txt"), 'a') as out:
-            out.write(train_img_path)
-
-    for y in TEST_IMAGES:
-        train_img_path = y.split('.')[0] + ".jpg"
-        # break to next line
-        train_img_path = train_img_path + "\n"
-
-        filename = y.rsplit('/', 1)[-1].split('.')[0] + ".jpg"
-
-        shutil.copy2("{}{}".format(
-            cfg.config['IMAGE_PATH'], filename), "{}".format(TEST_PATH))
-        print("Test File out path {}". format(OUTPUT_PATH + "{}".format("test.txt")))
-        with open(OUTPUT_PATH + "{}".format("test.txt"), 'a') as out:
-            out.write(train_img_path)
-
-
 def darkflow_sort_images():
-    # todo change to config file
+
     TRAIN_IMAGES = glob.glob(cfg.config['TRAINING_OUTPUT_PATH'] + "*xml")
 
     if len(TRAIN_IMAGES) < 1:
@@ -141,7 +108,6 @@ def darkflow_sort_images():
 
 
 # Get point of a box when given a centre point, width, height and angle.
-
 def draw_rec_centre_point(x0, y0, width, height, angle, img, colour=(255, 255, 255)):
     _angle = angle * math.pi / 180.0
     # _angle = angle

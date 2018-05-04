@@ -29,10 +29,7 @@ class TestCalculateIOU(unittest.TestCase):
 
         union_area = rec1.find_union_shape_area(rec2)
 
-        # 50^2 -> 2500
         self.assertTrue(2500, union_area)
-
-    #     todo intersection_over_union
 
     def test_intersection_over_union(self):
         rec1 = Rectangle(100, 100, 50, 50, 0)
@@ -110,12 +107,9 @@ class TestCalculateIOU(unittest.TestCase):
 
         self.assertTrue(0.0016777116013757234 == iou)
 
-    # todo fix name edge case test
-    def test(self):
-        """
-        Edge Case Test -
-        :return:
-        """
+
+    def testBrokenEdgeCase(self):
+
         gt_rec = Rectangle(658.4999997275216, 220.00000068119596, 89.00000038378948, 49.999997442956285,
                            -78.43986690044403)
         netout_rec = Rectangle(646.7366170883179, 212.04363265207837, 1.3590652958357197, 1.0475772630980373,

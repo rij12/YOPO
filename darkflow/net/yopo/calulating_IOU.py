@@ -2,10 +2,12 @@ import math
 
 import cv2
 import pyclipper
+
 """
 
 
 """
+
 
 class Point:
 
@@ -200,8 +202,6 @@ def intersection_over_union(bbox_ground_truth, bbox_predicted):
     if union == 0:
         return 0
 
-    print("Union: ", union)
-    print("Intersection: ", intersection)
     return intersection / union
 
 
@@ -212,7 +212,6 @@ def show_image(img):
 
 
 def check_intersection_is_line(rec):
-
     """
     :param rec: Rectangle Object
     Checks if Rectangle has a non-zero area, by looking at the x and y point ensuring that at l
@@ -236,61 +235,3 @@ def check_intersection_is_line(rec):
     else:
         return False
 
-
-# Used for Manual tests
-if __name__ == "__main__":
-
-    IMAGE_PATH = "/home/richard/git/YOPO/sub_set/images/040967287.jpg"
-
-    netout_rec = Rectangle(646.7366170883179, 212.04363265207837, 0, 1.0475772630980373,
-                           0)
-
-    check_intersection_is_line(netout_rec)
-
-    print(check_intersection_is_line(Rectangle(4, 4, 0, 2, 0)))
-    print(check_intersection_is_line(Rectangle(4, 4, 2, 0, 0)))
-    print(check_intersection_is_line(Rectangle(4, 4, 0, 2, -66)))
-    print(check_intersection_is_line(Rectangle(4, 4, 2, 0, 99)))
-
-    img = cv2.imread(IMAGE_PATH)
-
-    #  Ground Truth - left-lower-arm
-    centre_point_x = (1503 + 1553) / 2 # xmax, xmin
-    centre_point_y = (817 + 978) / 2   # ymax, ymin
-    print("x: {}, y: {}".format(centre_point_x, centre_point_y))
-    angle = -72
-    width = 50
-    height = (978 - 817)
-
-    rec1 = Rectangle(centre_point_x, centre_point_y, width, height, angle)
-    # rec1.draw(img, colour=(0, 0, 250))
-
-    # 2nd Rectangle - Predicted Box
-    rec2_x = centre_point_x + 25
-    rec2_y = centre_point_y + 25
-    rec2_w = 50
-    rec2_h = height
-    rec2_angle = 30
-    rec2 = Rectangle(rec2_x, rec2_y, rec2_w, rec2_h, rec2_angle)
-
-    rec1 = Rectangle(125, 125, 160, 160, 90)
-    rec2 = Rectangle(205, 205, 160, 160, 90)
-
-
-
-    # union, shape_vertices_union = rec1.find_union_shape_area(rec2, vertices=True)
-    # draw_polygon(img, shape_vertices_union, colour=(255, 255, 255))
-    draw_polygon(img, rec1.get_vertices_points(), colour=(255, 255, 255))
-    draw_polygon(img, rec2.get_vertices_points(), colour=(255, 0, 255))
-    # intersection_shape, points = rec1.find_intersection_shape_area(rec2, True)
-    # draw_polygon(img, points, colour=(255, 133, 133))
-
-    iou = intersection_over_union(rec1, rec2)
-
-    print("IOU: {}".format(iou))
-    cv2.imwrite("output_union.jpg", img)
-
-    # Show result
-    cv2.namedWindow("Display window", cv2.WINDOW_AUTOSIZE)
-    cv2.imshow("Display Window", img)
-    cv2.waitKey(0)

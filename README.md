@@ -22,6 +22,9 @@ YOPO is split into two parts: the pre-processing and the YOPO network.
     ```
     pip3 install -r requirements.txt --user
     ```
+    
+3. The human pose dataset weights can be downloaded form here - https://1drv.ms/f/s!Ao7rGgBsjbqiiqwNhPhjgikppDSgMw
+   If no weight files are present please contact rij12@aber.ac.uk  
 
 ### YOPO preprocessing
 
