@@ -6,10 +6,7 @@
     <bookmark url="file://$PROJECT_DIR$/darkflow/net/yopo/train.py" line="188" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aa2a4d5-6272-4f30-973a-893f06fb2a77" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/test/test_darkflow.py" afterPath="$PROJECT_DIR$/test/test_darkflow.py" />
-    </list>
+    <list default="true" id="9aa2a4d5-6272-4f30-973a-893f06fb2a77" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,8 +92,8 @@
       <file leaf-file-name="test_darkflow.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test_darkflow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="210" column="65" lean-forward="true" selection-start-line="210" selection-start-column="65" selection-end-line="210" selection-end-column="65" />
+            <state relative-caret-position="2399">
+              <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -295,7 +292,12 @@
             <path>
               <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
               <item name="YOPO" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YOPO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YOPO" type="462c0819:PsiDirectoryNode" />
+              <item name="ckpt" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -312,19 +314,19 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ckpt/overfitted_weight" />
+      <recent name="$PROJECT_DIR$/tensorboard" />
+      <recent name="$PROJECT_DIR$/tensorboardtrain/old" />
+      <recent name="$PROJECT_DIR$/test/YOPO" />
+      <recent name="$PROJECT_DIR$/darkflow/net/yolo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/darkflow/cython_utils" />
       <recent name="$PROJECT_DIR$/sub_set/labels" />
       <recent name="$PROJECT_DIR$/darkflow/net" />
       <recent name="$PROJECT_DIR$/darkflow/net/yolo" />
       <recent name="$PROJECT_DIR$/darkflow/net/yopo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tensorboard" />
-      <recent name="$PROJECT_DIR$/tensorboardtrain/old" />
-      <recent name="$PROJECT_DIR$/test/YOPO" />
-      <recent name="$PROJECT_DIR$/darkflow/net/yolo" />
-      <recent name="$PROJECT_DIR$/ckpt/other" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -339,7 +341,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.YOLO_Preprocessing">
+  <component name="RunManager" selected="Python.flow_new">
     <configuration name="YOLO_Preprocessing" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -470,7 +472,7 @@
       <module name="darkflow" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flow" />
-      <option name="PARAMETERS" value="--model $PROJECT_DIR$/cfg/yopo.cfg --load $PROJECT_DIR$/bin/yolo.weights --train --annotation $PROJECT_DIR$/sub_set/labels --dataset $PROJECT_DIR$/sub_set/images --epoch 20000 --gpu 0.9 --summary tensorboard" />
+      <option name="PARAMETERS" value="--model $PROJECT_DIR$/cfg/yopo.cfg --load $PROJECT_DIR$/bin/yolo.weights --train --annotation $PROJECT_DIR$/sub_set/labels --dataset $PROJECT_DIR$/sub_set/images --epoch 1 --gpu 0.9 --summary tensorboard" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -570,10 +572,10 @@
       <item index="5" class="java.lang.String" itemvalue="Python.draw_grid_cells" />
       <item index="6" class="java.lang.String" itemvalue="Python.main" />
       <item index="7" class="java.lang.String" itemvalue="Python.calulating_IOU (1)" />
-      <item index="8" class="java.lang.String" itemvalue="Python tests.Nosetests in test_calculate_IOU.py" />
-      <item index="9" class="java.lang.String" itemvalue="Python tests.Nosetests in test_darkflow.py" />
-      <item index="10" class="java.lang.String" itemvalue="Python tests.Nosetests for test_calculate_IOU.TestCalculateIOU.test" />
-      <item index="11" class="java.lang.String" itemvalue="Python.draw_keypoints" />
+      <item index="8" class="java.lang.String" itemvalue="Python.draw_keypoints" />
+      <item index="9" class="java.lang.String" itemvalue="Python tests.Nosetests in test_calculate_IOU.py" />
+      <item index="10" class="java.lang.String" itemvalue="Python tests.Nosetests in test_darkflow.py" />
+      <item index="11" class="java.lang.String" itemvalue="Python tests.Nosetests for test_calculate_IOU.TestCalculateIOU.test" />
     </list>
     <recent_temporary>
       <list size="4">
@@ -686,7 +688,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3036" y="-4" width="2497" height="1452" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294964" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3908397" sideWeight="0.51282054" order="11" side_tool="true" content_ui="tabs" />
@@ -694,7 +695,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258595" sideWeight="0.91382766" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32810163" sideWeight="0.4871795" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11222445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11222445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="false" weight="0.31570512" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1172,8 +1173,8 @@ y_axis_len = len(set(y_axis))</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_darkflow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="210" column="65" lean-forward="true" selection-start-line="210" selection-start-column="65" selection-end-line="210" selection-end-column="65" />
+        <state relative-caret-position="2399">
+          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
           <folding />
         </state>
       </provider>

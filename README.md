@@ -93,8 +93,18 @@ The weight outputted from the training of the network are save in a folder calle
 
     ```
     
+## Run Tests
 
+IOU unit tests:
+```
+python3 test/YOPO/test_calculate_IOU.py
+```
 
+Darkflow tests that require "buildPath" to be change to cloned repo root.
+
+```
+pytest -x --cov=./
+```
 
 ## Acknowledgments
 
